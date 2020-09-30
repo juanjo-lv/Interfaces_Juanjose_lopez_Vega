@@ -5,6 +5,55 @@
 	<title>Ejercicio formatear tabla</title>
 	<style>
 		/* Añadir estilos de tablas */
+		table{
+			border-collapse: collapse;
+			width:500px;
+			height: 250px;
+		}
+		tr,td,th{
+			border: 1px solid black;
+		}
+		th[scope="col"],td,th{
+			height: 40px;
+			padding-top:30px;
+			
+			text-align: center;
+			
+		}
+		th[scope="col"]{
+			background-image: url("imagenes/fondo_gris.gif");
+			
+		}
+		tr.par:first-of-type td{
+			background-color:yellow;
+		}
+		tr.par td{
+			background-color: rgb(245, 245, 175);
+		}
+		th[scope="row"]{
+			background-color: rgb(169, 213, 231);
+		}
+		th.euro{
+			background-image: url("imagenes/euro.png");
+			background-repeat: no-repeat;
+			background-size: 20px;
+
+		}
+		th.dolar{
+			background-image: url("imagenes/dolar.png");
+			background-repeat: no-repeat;
+			background-size: 20px;
+		}
+		th.libra{
+			background-image: url("imagenes/libra.png");
+			background-repeat: no-repeat;
+			background-size: 20px;
+		}
+		th.yen{
+			background-image: url("imagenes/yen.png");
+			background-repeat: no-repeat;
+			background-size: 20px;
+		}
 	</style>
 </head>
 <body>
