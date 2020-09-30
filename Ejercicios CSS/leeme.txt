@@ -1,0 +1,15 @@
+              Ejercicio    finalizado   
+
+   	 #1              sí               
+   	 #2              sí                
+   	 #3              no               
+   	 #4              no                
+    	#5               no                  
+    	#6               no                  
+    	#7               no                  
+   	 #8              no                  
+    	#9               no                  
+   	#10             no                 
+   	#11             no                 
+   	#12             no                 
+   	#13             no                  
