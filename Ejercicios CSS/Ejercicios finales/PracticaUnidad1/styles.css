@@ -20,3 +20,11 @@ p.nave:first-child{
     color:white;
     background-color: orange;
 }
+div#imagen{
+    background-image: url(img/imagenPrincipal.jpg);
+    height: 500px;
+    width:100%;
+    margin-top: 1em;
+    background-repeat: no-repeat; 
+      
+}
