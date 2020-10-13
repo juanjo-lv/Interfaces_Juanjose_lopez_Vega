@@ -1,0 +1,22 @@
+*{
+    font-size: 1em;
+}
+#inicio{
+    font-size: 25px;
+    font-weight: bold;
+    color: orange;
+    display: block;
+    float: left;
+    margin: 0em 35em 0em 3em ;
+}
+.nave{
+    color: orange;
+    padding-top: 0.5em;
+    display : block;
+    float: left;
+    margin: 0em 1.5em 0em 1.5em ;
+}
+p.nave:first-child{
+    color:white;
+    background-color: orange;
+}
