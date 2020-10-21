@@ -14,5 +14,12 @@ h2{
 }
 ul{
     border : 2px solid lime;
+    
+}
+li+li{
     margin: 1em;
 }
+li:last-child{
+    margin: 0em;
+}
+
