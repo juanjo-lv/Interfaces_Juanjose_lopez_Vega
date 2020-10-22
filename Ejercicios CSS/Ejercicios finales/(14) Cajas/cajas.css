@@ -1,15 +1,65 @@
+/*primer ejercicio*/
 #contenedor{
-    width: 75%;
-    height: 75vh;
+    width: 52em;
+    height: 52em;
     margin: auto;
     border: 1px solid black;
 }
-.caja{
-    width: 10em;
-    height: 10em;
-    background-color: red;
+#contenedor .caja{
+    width: 15em;
+    height: 15em;
+    float: left;
+    margin: 1em;
+    border: 1px solid black;
+}
+#contenedor .fila2{
+    background-color: green;
+}
+#contenedor .fila3{
+    background-color: blue;
+}
+#contenedor .reset{
+   clear: left;
+}
+/*Ejercicio2*/
+#contenedor2{
+    width: 52em;
+    height: 52em;
+    margin: auto;
+    border: 1px solid black;
+}
+#contenedor2 .caja{
+    margin-top: 10px;
+    width: 15em;
+    height: 15em;
+    float: left;
+    margin: 1em;
+    border: 1px solid black;
+}
+#contenedor2 .caja:nth-child(even){
+    display: none;
+}
+#contenedor2 .fila2{
+    background-color: green;
+}
+#contenedor2 .fila3{
+    background-color: blue;
+}
+
+/*floats*/
+#contenedor2 #caja3{
+    float: right;
+}
+#contenedor2 #caja7{
+    float: right;
+}
+
+/*resets*/
+#contenedor2 .fila2{
+    clear: right;
     float: left;
 }
-.reset{
-    clear:left;
+#contenedor2 #caja9{
+    clear: right;
+    float: left;
 }
