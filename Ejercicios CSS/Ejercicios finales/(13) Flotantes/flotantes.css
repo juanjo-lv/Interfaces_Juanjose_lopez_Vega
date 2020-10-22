@@ -23,8 +23,9 @@
 			background-color: #31174A;
 			text-align: center;
 			font-weight: bold;		
+			clear: right;
 			float: right;
-			clear: right;	
+				
 
 		}
 		.izquierda {
@@ -34,3 +35,7 @@
             clear: right;
             float: left;
 		}	
+		.parrafonoafectado{
+			clear: right;
+			float: left;
+		}
