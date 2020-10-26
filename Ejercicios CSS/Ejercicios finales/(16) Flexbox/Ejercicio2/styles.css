@@ -1,0 +1,20 @@
+
+.contenedor{
+    margin: auto;
+    display: flex;
+    width: 500px;
+    height: 150px;
+    background: rgb(42, 223, 177);
+    margin-bottom: 1em ;
+}
+.contenedor{
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenido{
+    width: 18%;
+    background-color: rgb(231, 104, 19);
+    text-align: center;
+}
