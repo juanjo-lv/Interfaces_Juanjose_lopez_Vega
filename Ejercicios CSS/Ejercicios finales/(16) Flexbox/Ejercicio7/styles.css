@@ -1,0 +1,28 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: darkslateblue;
+}
+h1{
+    color:aliceblue;
+    margin-left: 1em;
+}
+ul{
+    background-color: tomato;
+    margin-right: 1em;
+    display: flex;
+    list-style: none;
+    height: 2.2rem;
+    width: 20%;
+    
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-inline-start: 0px;
+
+}
+li{
+    color:aliceblue;
+}
