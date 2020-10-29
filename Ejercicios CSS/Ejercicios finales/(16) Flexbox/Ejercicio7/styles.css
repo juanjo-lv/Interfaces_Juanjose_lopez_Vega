@@ -38,15 +38,13 @@ section{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    
-    
 }
 article{
     padding-top: 1rem;
     padding-bottom: 2rem;
-    margin-left: 4em;
-    width: 30%;
+    margin-left: 2em;
     display: flex;
+    width: 40%;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
@@ -59,12 +57,10 @@ h2{
     width: 90%;
 }
 hr{
-    width: 90%;
-    position: relative;
-    bottom: 0%;
-    right: 5%;
-    
-    
+    width: 100%;
+    margin: 0 auto;
+    height: 1px;
+    background-color: black;
 }
 aside{
 
@@ -74,7 +70,6 @@ aside{
     align-items: center;
     width: 30%;
     background-color: orange;
-  
 }
 .contenedor{
     display: flex;
