@@ -1,23 +1,27 @@
+body{
+    margin-top: 2.5%;
+    width: 98%;
+}
 header{
+    width: 100%;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: darkslateblue;
+    background-color: #2A4057;
 }
 h1{
     color:aliceblue;
     margin-left: 1em;
+    width: 20%;
 }
 ul{
-    background-color: tomato;
-    margin-right: 1em;
+    width: 25%;
+    height: 2.2rem;
     display: flex;
     list-style: none;
-    height: 2.2rem;
-    width: 20%;
-    
-
-    display: flex;
+    background-color: #D25400;
+    margin-right: 1em;
     justify-content: space-around;
     align-items: center;
     padding-inline-start: 0px;
@@ -25,4 +29,89 @@ ul{
 }
 li{
     color:aliceblue;
+    width: 22%;
+    text-align: center;
+   
+}
+
+section{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+    
+}
+article{
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    margin-left: 4em;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+p{
+    width: 90%;
+}
+h2{
+    margin-bottom: 0px;
+    width: 90%;
+}
+hr{
+    width: 90%;
+    position: relative;
+    bottom: 0%;
+    right: 5%;
+    
+    
+}
+aside{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 30%;
+    background-color: orange;
+  
+}
+.contenedor{
+    display: flex;
+    height: 45%;
+    width: 92.5%;
+    background-color: orangered;
+    
+}
+.c1 {
+    flex-direction: column;
+    
+}
+.f2{
+    align-self: flex-end;
+}
+.c2{
+    flex-direction: column-reverse;
+}
+.f4{
+   align-self: flex-end;
+}
+.imgflex{
+    width: 50%; /* se puede hacer desbordar y luego en el padre darle un wrap*/
+    height: 50%;
+    background-color: brown;
+    color: white;
+}
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2A4057;
+}
+.ul-footer{
+    margin-left: 2%;
+}
+.ul-footer2{
+    width: 5%;
+    background-color: orange;
 }
