@@ -5,8 +5,7 @@
 #cabecera{
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    
+    justify-content: space-between;
 }
 #inicio{
     font-size: 25px;
@@ -18,16 +17,18 @@
     
 }
 #menu{
-    width: 100%;
+    
     display:flex;
     flex-direction: row;
     justify-content: flex-end;
-   
+    flex-basis: 30%;
 }
 .nave{
     color: grey;
-    
-    padding: 0.5em 1.7em 0.5em 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 15%;
     margin: 0.5em 1.7em 0em 0em ;
     
 }
@@ -45,13 +46,11 @@ div#imagen{
     background-position: center center;
     background-size: cover;
 
-
-    min-height: 300px;
-    height: 30vh;
+    height: 40vh;
     
 
     max-height: 500px;
-    margin-top: 1em;  
+   
 }
 h2{
     font-size: 25px;
@@ -77,25 +76,26 @@ section{
     justify-content: center;
 }
 #intro{
-    
     padding-top:2em;
     height: 15vh;
-    width: 450px;
-    margin-bottom: 1em;
-    
+    width: 35%;
+    margin-bottom: 2em;
 }
 article{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
+    margin-bottom: 5em;
 
 }
 
 .articulos{
     height: 32vh;
     width: 14em;
-    margin-left: 1.5em;
-    margin-right: 1.5em;
+    
+
+}
+.articulos> p{
+    width: 14em;
 }
 
 .textoArticulos{
@@ -105,11 +105,14 @@ article{
 .boton{
     color:white;
     background-color: #cd9a00;
-    border-radius: 10%;
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
-    padding-right: 1em; 
-    padding-left: 1em;
+    border-radius: 5px 5px;
+    box-shadow: 3px 3px 5px firebrick;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 2em;
 }
 img{
     width: 14em;
