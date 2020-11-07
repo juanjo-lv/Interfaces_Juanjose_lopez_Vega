@@ -37,6 +37,9 @@ p.nave:first-child{
     background-color: #cd9a00;
     border-radius: 12%;
 }
+p.nave:first-child:hover{
+    box-shadow: 3px 3px 5px firebrick;
+}    
 p.nave:last-child{
     margin-right: 6em;
 }
@@ -106,13 +109,16 @@ article{
     color:white;
     background-color: #cd9a00;
     border-radius: 5px 5px;
-    box-shadow: 3px 3px 5px firebrick;
+  
 
     display: flex;
     justify-content: center;
     align-items: center;
     width: 50%;
     height: 2em;
+}
+.boton:hover{
+    box-shadow: 3px 3px 5px firebrick;
 }
 img{
     width: 14em;
