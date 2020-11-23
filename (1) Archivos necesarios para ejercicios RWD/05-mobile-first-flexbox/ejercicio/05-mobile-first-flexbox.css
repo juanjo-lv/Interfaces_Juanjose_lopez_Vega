@@ -6,7 +6,7 @@ body{
 div.container{
   margin: 0 auto;	
   font-size: 16px;
-  max-width: 1024px;  
+  max-width: 1200px;  
 }
 
 
@@ -35,4 +35,37 @@ div.container aside {
   padding: 1em;
   font-size: 1em;
   box-sizing: border-box;
+}
+@media screen and (min-width:768px){
+  div.container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  div.container article{
+    height: 55vh;
+    width: 70%;
+    background-image: url(img/content-is-like-water-4.jpg);
+    
+  }
+  div.container aside{
+    width: 30%;
+    height: 10%;
+  }
+}
+@media screen and (min-width:1200px){
+  div.container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  div.container article{
+    height: 55vh;
+    width: 70%;
+    background-image: url(img/content-is-like-water-5.jpg);
+    
+  }
+  div.container aside{
+    width: 30%;
+    height: 10%;
+  }
 }
