@@ -43,7 +43,7 @@ div.container aside {
     flex-wrap: wrap;
   }
   div.container article{
-    height: 55vh;
+    height: 80vh;
     width: 70%;
     background-image: url(img/content-is-like-water-4.jpg);
     
@@ -54,12 +54,14 @@ div.container aside {
   }
 }
 @media screen and (min-width:1200px){
+  
   div.container {
+    width: 80%;
     display: flex;
     flex-wrap: wrap;
   }
   div.container article{
-    height: 55vh;
+    height: 80vh;
     width: 70%;
     background-image: url(img/content-is-like-water-5.jpg);
     
