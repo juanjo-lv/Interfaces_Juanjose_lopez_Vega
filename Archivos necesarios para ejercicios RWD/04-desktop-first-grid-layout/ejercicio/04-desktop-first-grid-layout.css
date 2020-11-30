@@ -58,11 +58,11 @@ div.container aside {
 }
 @media screen and (max-width:240px){
   div.container{
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: 10vh 1fr 15%;
-    grid-template-areas: "nav nav nav"
-                          "article article article"
-                          "aside aside aside";
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 10vh 2fr 5vh;
+    grid-template-areas: "nav nav"
+                          "article article"
+                          "aside aside";               
   }
   div.container article{
     background-image: url(img/content-is-like-water-2.jpg);
