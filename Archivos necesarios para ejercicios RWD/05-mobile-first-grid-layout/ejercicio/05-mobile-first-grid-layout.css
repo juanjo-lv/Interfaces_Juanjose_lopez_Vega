@@ -7,6 +7,13 @@ div.container{
   margin: 0 auto;	
   font-size: 16px;
   max-width: 1024px;  
+
+  display: grid;
+  grid-template-columns: 1fr,1fr,1fr;
+  grid-template-rows: 10vh 1fr 7vh;
+  grid-template-areas: "nav nav nav"
+                       "article article article"
+                       "aside aside aside";
 }
 
 
@@ -38,4 +45,31 @@ div.container aside {
   font-size: 1em;
   box-sizing: border-box;
   grid-area: aside; /* Importante para resolver el ejercicio */
+}
+@media screen and (min-width:241px){
+  div.container{
+    height: 90vh;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: 10vh 15% 1fr;
+    grid-template-areas: "nav nav nav nav nav nav "
+                          "article article article article aside aside"
+                          "article article article article . .";
+  }
+  div.container article{
+    height: 100%;
+    background-image: url(img/content-is-like-water-4.jpg);
+  }
+}
+@media screen and (min-width:769px){
+  div.container{
+    height: 90vh;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: 10vh 10% 1fr;
+    grid-template-areas: ". nav nav nav nav nav nav . "
+                          ". article article article article aside aside ."
+                          ". article article article article . . .";
+  }
+  div.container article{
+    background-image: url(img/content-is-like-water-5.jpg);
+  }
 }
