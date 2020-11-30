@@ -2,16 +2,22 @@ div {
     box-sizing: border-box;
 }
 .row {
+    
     border: 10px solid black;
     padding: 0.5em;
     margin: 0.5em;
     text-align: center;
+    width: 100%;
+    display: flex;
+   
+    
 }
 .element {
     border: 10px solid green;
     padding: 0.5em;
     margin: 0.5em;
     width: calc(100% - 1em); /* Hay padding y margin lateral de 0.5em, por tanto restamos ambos (1em) para que quede el diseño cuadrado */
+    
 }
 .image {
     border: 10px solid blue;
@@ -22,4 +28,28 @@ div {
     border: 10px solid red;
     padding: 0.5em;
     margin: 0.5em;
+}
+@media screen and (max-width:1200px){
+    .row{
+        flex-wrap: wrap;
+    }
+    .element{
+       width: calc(33% - 1em);
+    }
+}
+@media screen and (max-width:1024px){
+    .row{
+        flex-wrap: wrap;
+    }
+    .element{
+       width: calc(50% - 1em);
+    }
+}
+@media screen and (max-width:768px){
+    .row{
+        flex-wrap: wrap;
+    }
+    .element{
+       width: calc(100% - 1em);
+    }
 }
