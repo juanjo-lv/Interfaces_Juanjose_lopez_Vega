@@ -6,6 +6,12 @@ div {
     padding: 1em;
     margin: 0.5em;
     text-align: center;    
+
+    /* grid*/
+
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-gap: 0.5em;
 }
 .element {
     border: 10px solid green;
@@ -20,4 +26,22 @@ div {
     border: 10px solid red;
     padding: 0.5em;
     margin: 0.5em;
+}
+@media screen and (max-width:1024px){
+   .row{
+       grid-template-columns: repeat(3,1fr);
+       grid-gap: 0.5em;
+   }
+}
+@media screen and (max-width:768px){
+    .row{
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 0.5em;
+    }
+}
+@media screen and (max-width:400px){
+    .row{
+        grid-template-columns: 1fr;
+        grid-gap: 0.5em;
+    }
 }
