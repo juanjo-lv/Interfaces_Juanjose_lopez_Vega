@@ -165,6 +165,14 @@ article{
     background-color: var(--color-art_agotado);
 }
 
+article .imagen{
+    width: 220px;
+    height: 220px;
+    background-image: url(img/perrete220.jpg);
+    background-size: cover;
+    border-radius: 4px;
+    
+}
 article p{
     margin-top: 0.5rem;
     font-weight: bold;
