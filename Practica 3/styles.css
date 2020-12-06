@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+:root{
+/*colores*/    
+    /*azules*/
+    --color-header: #99E5FF;
+   
+    /*verdes*/
+    --color-nav: #C4FFB1;
+    --color-art: #E3FFDA;
+    --color-boton : #6EFF9E;
+   
+    /*rojos*/
+    --color-art_agotado : #FFC9C9;
+    --color-boton_agotado : #FF7979;
+
+    /*amarillos*/
+    --color-comentarios : #FFFFCC;
+    --color-nota : #FFFF5C;
+
+    /*gris*/
+    --color-gris : #F0F0F0;
+    --color-negro: #2E2E2E;
+
+/*tamaños */
+
+    /*icono*/
+    --tam-icon: 35px;    
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+header{
+    height: 10vh;
+    background-color: var(--color-header);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-grande{
+    width: 15vw;
+}
+.logo-grande img{
+    width: 180px;
+ 
+}
+
+.icono{
+    width: var(--tam-icon);
+    margin-right: 1rem;
+   
+}
+
+.barra{
+    margin-left: 10%;
+    width: 20vw;
+    height: 5vh;
+    border-radius: 1.5rem;
+    text-align: center;
+    align-self: center;
+    background-image: url(img/loupe.png);
+    background-repeat: no-repeat;
+    background-size: 35px;
+    background-position: left;
+    background-position-x: 1rem;
+}
+
+
+.usuario{
+  
+    display:flex;
+    align-items: center;
+    margin-right: 1rem;
+}
+.usuario a[class="log"]{
+    
+    border: 1px solid black;
+    border-radius: 8px;
+    height: 2.5rem;
+    margin: 0rem 0.5rem 0rem 0.5rem;
+    background-color: var(--color-gris);
+    text-decoration: none;
+    font-weight: bolder;
+
+
+    display: flex;
+    align-items: center;
+    padding: 0.2rem;
+   
+}
+.opciones{
+    width: var(--tam-icon);
+}
+
+
+/*navegador*/
+nav{
+    height: 5vh;
+    background-color: var(--color-nav);
+    display: flex;
+    align-items: center;
+   
+}
+.breadcrump{
+    display: flex;
+    margin-left: 1rem;
+    width: 30%;
+    height: 1rem;
+}
+.breadcrump a{
+    text-decoration: none;
+    color: blue;
+}
+.breadcrump a:last-child{
+    font-weight: bold;
+    color: black;
+}
+.separador{
+    margin: 0rem 0.4rem 0rem 0.4rem;
+}
+
+.desplegable{
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+}
+ul a{
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+}
+
+main{
+    display: flex;
+    justify-content: space-between;
+}
+section.container{
+    width: 75%;
+    display: grid;
+    margin-left: 0.4rem;
+    grid-template-columns:  repeat(3,1fr);
+    grid-template-rows:  repeat(2,1fr);
+    grid-gap: 1rem;
+    grid-template-areas: 'article article article'
+                         'article article article';   
+                         
+}
+article{
+    
+    margin-top: 2rem;
+    margin-left:0.2rem;
+    
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-area: "article";
+    background-color: var(--color-art);
+}
+#agotado{
+    background-color: var(--color-art_agotado);
+}
+
+article p{
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+article a{
+    margin: 0.5rem;
+}
+article a:last-child{
+    margin-bottom: 0.5rem;
+    width: 33%;
+    height: 2rem;
+
+    text-decoration: none;
+    border: 1px solid black;
+    color: black;
+    border-radius: 4px;
+
+    background-color: var(--color-boton);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#agotado a:last-child{
+    background-color: var(--color-boton_agotado);
+    color: black;
+
+}
+article .descripcion{
+    width: 200px;
+    margin-top: 1rem;
+    border-radius: 4px;
+    background-color: var(--color-gris);
+}
+
+aside{
+    background-color: var(--color-header);
+    width: 22%;
+    
+    display: grid;
+    grid-template-columns: 0.1fr 1fr 0.1fr;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: ". oferta ."
+                          ". comentario .";
+
+
+}
+section.oferta{
+    margin-top: 1rem;
+    background-color: var(--color-comentarios);
+    margin-bottom: 2rem;
+    border: 1px solid black;
+    border-radius: 4px;
+    grid-area: oferta;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+section.oferta h4 span{
+    font-weight: normal;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    margin-left: 1rem;
+}
+section.oferta h3{
+    font-family: 'Nerko One', cursive;
+    font-size: 22px;
+}
+section.oferta img{
+    width: 180px;
+    border-radius: 4px;
+}
+section.oferta img[src="img/gato.jpg"]{
+    height: 250px;
+}
+section.comentarios{
+    
+    background-color: var(--color-comentarios);
+    grid-area: comentario;
+    margin-bottom: 1rem;
+}
+
+
+footer{
+    height: 20vh;
+    background-color: var(--color-negro);
+}
+
+/*maximo de tablet según he podido comprobar*/
+
+@media screen and (max-width:1800px){
+    article img{
+        width: 250px;
+    }
+}
+@media screen and (max-width:1280px){
+    article img{
+        width: 180px;
+        height: 180px;
+    }
+    aside{
+        display: none;
+    }
+    section.container{
+        width: 95%;
+    }
+  
+}
+
