@@ -417,9 +417,10 @@ footer {
     display: none;
   }
 }
+/*El diseño es responsive hasta los 320px en ese momento empieza a descuadrar*/
 @media screen and (max-width: 768px) {
   header {
-    min-width: 320px;
+    min-width: 240px;
     height: 15vh;
     width: 100vw;
   }
@@ -457,6 +458,7 @@ footer {
   }
 
   nav {
+    min-width: 240px;
     width: 100vw;
     height: 8vh;
     display: flex;
@@ -527,3 +529,5 @@ footer {
     display: none;  
   }
 }
+
+
