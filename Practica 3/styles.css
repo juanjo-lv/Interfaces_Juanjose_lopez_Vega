@@ -390,12 +390,17 @@ footer {
   height: 40px;
 }
 
+
+/*MEDIA QUERIES*/
+
+
 @media screen and (max-width: 1800px) {
   article img {
     width: 250px;
   }
 }
-/*maximo de tablet según he podido comprobar*/
+
+/*maxima resolucion para tablet según he investigado, las he probado con 2 que tengo en casa y funciona bien*/
 @media screen and (max-width: 1280px) {
   article img {
     width: 180px;
@@ -417,7 +422,7 @@ footer {
     display: none;
   }
 }
-/*El diseño es responsive hasta los 320px en ese momento empieza a descuadrar*/
+/*El diseño es responsive hasta los 240px en ese momento empieza a descuadrar*/
 @media screen and (max-width: 768px) {
   header {
     min-width: 240px;
