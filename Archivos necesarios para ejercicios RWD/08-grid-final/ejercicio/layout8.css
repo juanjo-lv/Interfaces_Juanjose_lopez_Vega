@@ -15,8 +15,9 @@ img {
 	list-style: none;
 	margin: 0 auto 0 auto;
 	padding: 0;
-	display: grid;
 	max-width: 960px;
+
+	display: grid;
 	grid-template-columns: 1fr;   
 	grid-template-rows: auto;
 	grid-auto-flow: dense;
@@ -27,3 +28,24 @@ img {
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	padding: 0.5em;
+}
+@media (min-width:768px){
+	.wrapper{
+		grid-template-columns: repeat(2,1fr);
+	}
+	.text{
+		grid-column: 1 / 3;
+	}
+}
+@media (min-width: 1024px){
+	.wrapper{
+		grid-template-columns: repeat(4,1fr);
+	}
+	.texto{
+		grid-column: 2 /4;
+		grid-row: 1 / 3;
+	}
+	.wide{
+		grid-column: auto / span 2;
+	}
+}
