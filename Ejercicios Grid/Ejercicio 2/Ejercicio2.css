@@ -1,0 +1,19 @@
+.contenedor{
+    width: 80%;
+    margin: auto;
+    height: 70vh;
+    border: 3px solid black;
+
+    display: grid;
+    grid-gap: 0.5em;
+    grid-template-columns: repeat(auto-fill, minmax(max-content, 18rem) minmax(9rem,1fr));
+    grid-auto-rows: minmax(6rem, auto);
+}
+.contenedor{
+    background-color: cadetblue;
+}
+.contenido{
+    border: 1px solid black;
+}
+
+

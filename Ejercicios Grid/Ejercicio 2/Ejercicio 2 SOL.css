@@ -1,0 +1,25 @@
+.wrapper {
+	width: 80%;
+	background-color: #fff;
+	color: #444;
+	margin: 2.5rem;
+	
+	display: grid;
+	grid-gap: 0.5em;
+	
+	/* Alternamos columnas de máximo 18rem y adaptada al contenido y filas de 9rem a 1fr */
+	grid-template-columns: repeat(auto-fill, minmax(max-content, 18rem) minmax(9rem,1fr));
+	
+	/* Las filas tienen como mínimo 6rem y se calculan automáticamente */
+	grid-auto-rows: minmax(6rem, auto);	
+}
+
+.box {
+	background-color: #444;
+	color: #fff;
+	border-radius: 5px;
+	padding: 1em;
+	font-size: 150%;
+}
+
+   
