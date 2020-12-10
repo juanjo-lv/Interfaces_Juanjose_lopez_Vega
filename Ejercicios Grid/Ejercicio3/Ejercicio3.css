@@ -1,0 +1,16 @@
+.contenedor{
+    display: grid;
+    grid-gap: 0.5em;
+    grid-template-columns: repeat(auto-fit,minmax(3rem,1fr));
+    grid-template-rows: minmax(6rem,auto);
+}
+
+.contenido{
+    background-color: rgba(224, 132, 10, 0.712);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
