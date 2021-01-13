@@ -8,20 +8,20 @@
 #uno{
     background-color:red;
     width: 20%;
-    display: none;
+    visibility: hidden;
 }
 #dos{
     background-color: blue;
     width: 20%;
-    display: none;
+    visibility: hidden;
 }
 #tres{
     background-color: green;
     width: 20%;
-    display: none;
+    visibility: hidden;
 }
 #cuatro{
     background-color: orange;
     width: 20%;
-    display: none;
+    visibility: hidden;
 }

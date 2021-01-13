@@ -5,16 +5,16 @@ var cuatro = document.getElementById('cuatro');
 
 
 function mostrar(){
-    uno.style.display="block";
+    uno.style.visibility="visible";
 }
 function mostrar2(){
-    dos.style.display="block";
+    dos.style.visibility="visible";
 }
 function mostrar3(){
-    tres.style.display="block";
+    tres.style.visibility="visible";
 }
 function mostrar4(){
-    cuatro.style.display="block";
+    cuatro.style.visibility="visible";
 }
 
 uno.addEventListener("click",setTimeout(mostrar(),1000));
