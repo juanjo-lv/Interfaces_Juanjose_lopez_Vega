@@ -21,6 +21,8 @@ function func(){
                 if(t<0){
                     cont.style.color='red';
                     clearInterval(SI);
+                }else{
+                    cont.style.color='black';
                 }
             },1000);
         }else{
