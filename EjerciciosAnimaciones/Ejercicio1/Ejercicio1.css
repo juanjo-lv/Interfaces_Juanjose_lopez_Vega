@@ -1,0 +1,27 @@
+.contenedor {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#uno{
+    background-color:red;
+    width: 20%;
+    display: none;
+}
+#dos{
+    background-color: blue;
+    width: 20%;
+    display: none;
+}
+#tres{
+    background-color: green;
+    width: 20%;
+    display: none;
+}
+#cuatro{
+    background-color: orange;
+    width: 20%;
+    display: none;
+}
