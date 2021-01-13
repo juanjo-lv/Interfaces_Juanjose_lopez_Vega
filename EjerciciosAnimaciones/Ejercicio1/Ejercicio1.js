@@ -17,7 +17,7 @@ function mostrar4(){
     cuatro.style.visibility="visible";
 }
 
-uno.addEventListener("click",setTimeout(mostrar(),1000));
+document.addEventListener("click",mostrar());
 dos.addEventListener("click",setTimeout(mostrar2(),1000));
 tres.addEventListener("click",setTimeout(mostrar3(),1000));
 cuatro.addEventListener("click",setTimeout(mostrar4(),1000));

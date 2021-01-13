@@ -1,0 +1,17 @@
+.contenedor{
+    width: 20%;
+    height: 300px;
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    background-color:papayawhip;
+    padding: 2rem;
+    border: 1px solid black;
+    border-radius: .3rem;
+}
+h1{
+    font-size: 2rem;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 3rem;
+}
