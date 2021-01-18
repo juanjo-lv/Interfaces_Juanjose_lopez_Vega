@@ -8,17 +8,21 @@ function todo(){
     let ocultar =document.querySelector("#fadeout");
 
     ver.addEventListener('click',()=>{
-        fadeIn(elemento,1000);
+        fadeIn(elemento,1000,()=> alert("fade in terminado"));
     });
     ocultar.addEventListener('click',()=>{
-        fadeOut(elemento,1000);
+        fadeOut(elemento,1000,()=> alert("fade out terminado"));
     })
 }
-function fadeIn(elemento, tiempo){
+function fadeIn(elemento, tiempo,callback){
     elemento.style.transition = `${tiempo/1000}s`;
     elemento.style.opacity = 1;
+
+    setTimeout(callback,1000);
 }
-function fadeOut(elemento,tiempo){
+function fadeOut(elemento,tiempo,callback){
     elemento.style.transition = `${tiempo/1000}s`;
     elemento.style.opacity = 0 ;   
+
+    setTimeout(callback,1000);
 }
