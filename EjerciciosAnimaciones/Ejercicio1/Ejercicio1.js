@@ -1,24 +1,41 @@
-var uno = document.getElementById('uno');
-var dos = document.getElementById('dos');
-var tres = document.getElementById('tres');
-var cuatro = document.getElementById('cuatro');
+document.addEventListener("DOMContentLoaded",()=>{
+    animacion()
+});
 
 
-function mostrar(){
-    uno.style.visibility="visible";
-}
-function mostrar2(){
-    dos.style.visibility="visible";
-}
-function mostrar3(){
-    tres.style.visibility="visible";
-}
-function mostrar4(){
-    cuatro.style.visibility="visible";
-}
+function animacion(){
+    var e1,e2,e3,e4,elemento;
+e1 = document.querySelector(".uno");
+e2 = document.querySelector(".dos");
+e3 = document.querySelector(".tres");
+e4 = document.querySelector(".cuatro");
+elemento = document.querySelector(".item");
 
-document.addEventListener("click",mostrar());
-dos.addEventListener("click",setTimeout(mostrar2(),1000));
-tres.addEventListener("click",setTimeout(mostrar3(),1000));
-cuatro.addEventListener("click",setTimeout(mostrar4(),1000));
+    document.addEventListener("click",()=>{
+       var set1 = setTimeout(() => {
+            e1.style.visibility="visible";
+        }, 1000);
+        var set2 = setTimeout(() => {
+            e2.style.visibility="visible";
+        }, 2000);
+         var set3 = setTimeout(() => {
+            e3.style.visibility="visible";
+        }, 3000);
+        var set4 = setTimeout(() => {
+            e4.style.visibility="visible";
+        }, 4000);
 
+        document.addEventListener("click",()=>{
+            clearInterval(set1);
+            clearInterval(set2);
+            clearInterval(set3);
+            clearInterval(set4);
+            e1.style.visibility="hidden";
+            e2.style.visibility="hidden";
+            e3.style.visibility="hidden";
+            e4.style.visibility="hidden";
+        })
+    });   
+    
+    
+}
