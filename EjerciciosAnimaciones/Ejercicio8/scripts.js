@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("click",animacion);
+    
 });
 
 
@@ -11,7 +12,7 @@ function animacion() {
     e4 = document.querySelector(".cuatro");
     elemento = document.querySelector(".item");
 
-    
+        
         var set1 = setTimeout(() => {
             e1.style.visibility = "visible";
             clearInterval(set1);
@@ -36,9 +37,21 @@ function animacion() {
             e3.style.visibility = "hidden";
             e4.style.visibility = "hidden";
             clearInterval(set5);
-            requestAnimationFrame(animacion)
-        }, 5000);
-    
+            var globalID = requestAnimationFrame(animacion)
 
+        }, 5000);
+        
+        //limpiar
+        document.addEventListener("click",()=>{ 
+            clearInterval(set1);
+            clearInterval(set2);
+            clearInterval(set3);
+            clearInterval(set4);
+
+            e1.style.visibility="hidden";
+            e2.style.visibility="hidden";
+            e3.style.visibility="hidden";
+            e4.style.visibility="hidden";
+        })
 }
 
