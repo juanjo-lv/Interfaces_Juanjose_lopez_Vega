@@ -6,13 +6,10 @@ class Wcblink extends HTMLElement {
 
     }
     connectedCallback() {
-        this.getAttribute("baseColor");
-        this.getAttribute("alternativeColor");
-        this.getAttribute("changeInterval");
-
         this.cambiarColor();
     }
 
+    // getters and setters
     get baseColor() {
         return this.getAttribute("baseColor");
     }
@@ -34,20 +31,27 @@ class Wcblink extends HTMLElement {
     set changeInterval(newVal) {
         this.setAttribute('changeInterval', newVal)
     }
-
+  
     cambiarColor() {
         var n =0;
+
+        // Si no se le asigna un valor a la etiqueta toma el segundo valor
+        const time = this.changeInterval || 500;
+        const alternativo = this.alternativeColor || "transparent";
+        const base = this.baseColor || "inherit";
+
+        //la llamada al get sin () sino falla
         setInterval(() => {
             if (n % 2 == 0) {
-                this.style.color = this.getAttribute("alternativeColor");
+                this.style.color = alternativo;
                 n++;
 
             } else {
-                this.style.color = this.getAttribute("baseColor");
+                this.style.color = base;
                 n++;
 
             }
-        }, this.getAttribute("changeInterval"));
+        }, time);
     }
 }
 
