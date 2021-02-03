@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <template id="miTemplate">
+        <style>
+            p{
+                background-color:royalblue;
+                font-weight: bold;
+            }
+            h1{
+                background-color: purple;
+            }
+        </style>
+            <h1>Esto es una prueba de template</h1>
+            <template id="parrafos">
+                <p></p>
+            </template>
+    </template>
+
+    <script>
+        var ciudades = ["Madrid","Barcelona","Sevilla","Valencia"];
+
+        var mitemp = document.querySelector("#miTemplate").content;
+        var parrafos = mitemp.querySelector("#parrafos").content.querySelector("p");
+        
+        ciudades.forEach(element => {
+            var ciu = parrafos.cloneNode(true);
+            ciu.textContent = element;
+            mitemp.appendChild(ciu);
+        });
+
+        var clone = mitemp.cloneNode(true);
+        document.body.appendChild(clone);
+    </script>
+</body>
+</html>

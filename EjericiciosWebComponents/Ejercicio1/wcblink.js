@@ -42,15 +42,16 @@ class Wcblink extends HTMLElement {
 
         //la llamada al get sin () sino falla
         setInterval(() => {
-            if (n % 2 == 0) {
-                this.style.color = alternativo;
-                n++;
+            // if (n % 2 == 0) {
+            //     this.style.color = alternativo;
+            //     n++;
 
-            } else {
-                this.style.color = base;
-                n++;
+            // } else {
+            //     this.style.color = base;
+            //     n++;
 
-            }
+            // }
+            this.style.color = ++n % 2 == 0 ? alternativo : base;
         }, time);
     }
 }
