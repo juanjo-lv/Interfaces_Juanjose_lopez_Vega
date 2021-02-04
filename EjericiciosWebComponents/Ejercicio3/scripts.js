@@ -1,4 +1,7 @@
-var nombre = "NECESITA NOMBRE";
+var menor ="&lt;"
+var mayor = "&gt;";
+
+var nombre = `${menor} NECESITA NOMBRE ${mayor}`;
 var desc = "NECESITA DESCRIPCION";
 var att = "Ninguno";
 var attdesc = "";
@@ -67,7 +70,7 @@ class elementDetails extends HTMLElement {
 
     if (this.tipo == "1") {
         this.shadowRoot.querySelector("summary").innerHTML = `  <span id="nomb">
-          <slot name="miNombre">slot</slot>
+          <slot name="miNombre">${menor} slot ${mayor}</slot>
         </span>
         <span id="desc>
           <slot name="miDescripcion">Un marcador de posición dentro de un componente
@@ -80,7 +83,7 @@ class elementDetails extends HTMLElement {
         </ul>`;
       }else if( this.tipo == "2"){
           this.shadowRoot.querySelector("summary").innerHTML = `  <span id="nomb">
-          <slot name="miNombre">template</slot>
+          <slot name="miNombre">${menor} template ${mayor}</slot>
         </span>
         <span id="desc>
           <slot name="miDescripcion">Un mecanismo para guardar contenido en el lado cliente que no se renderiza
@@ -88,6 +91,7 @@ class elementDetails extends HTMLElement {
           en tiempo de ejecución usando JavaScript</slot>
         </span>`;
       }
+      this.insertadjacentHTML('afterend','hr')
   }
 }
 
