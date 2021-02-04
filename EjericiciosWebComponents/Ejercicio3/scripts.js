@@ -36,7 +36,7 @@ span{
     <slot name="miDescripcion">${desc}</slot>
   </span>
 </summary>
-<p id="atributos">ATRIBUTOS</p>
+<p id="atributos">Atributos</p>
 <ul>
 <li id="nomAt">
   ${att}
