@@ -85,7 +85,6 @@ class elementDetails extends HTMLElement {
    
     this.shadowRoot.appendChild(this.clon);
     
-    
   }
 }
 
