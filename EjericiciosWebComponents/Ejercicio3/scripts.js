@@ -60,7 +60,7 @@ class elementDetails extends HTMLElement {
     this.attachShadow({ mode: "open" });
     this.clon = myTemplate.content.cloneNode(true);
     
-
+   
     
   }
   connectedCallback() {
@@ -91,7 +91,7 @@ class elementDetails extends HTMLElement {
           en tiempo de ejecución usando JavaScript</slot>
         </span>`;
       }
-      this.insertadjacentHTML('afterend','hr')
+      this.insertAdjacentHTML('afterend', '<hr>');
   }
 }
 
