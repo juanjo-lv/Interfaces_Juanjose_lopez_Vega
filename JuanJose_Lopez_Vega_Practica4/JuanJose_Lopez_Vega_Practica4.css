@@ -23,7 +23,6 @@
     
     display: grid;
     grid-template-columns:repeat(3,1fr); 
-    
     grid-gap: 0.5rem;
     padding: 0.5rem;
 
@@ -32,6 +31,13 @@
 .item{
     background-color: blueviolet;
     border-radius: 1rem; 
+    transition: .3s;
+}
+.item:hover{
+    /*animacion para los items*/
+    transition: .3s;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px 0 rgba(0 ,0 ,0,0.3);
 }
 .lateral{
     width: 100%;
