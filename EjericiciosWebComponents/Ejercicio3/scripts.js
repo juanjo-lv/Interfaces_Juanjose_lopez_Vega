@@ -96,3 +96,4 @@ class elementDetails extends HTMLElement {
 }
 
 customElements.define("element-details", elementDetails);
+ 
