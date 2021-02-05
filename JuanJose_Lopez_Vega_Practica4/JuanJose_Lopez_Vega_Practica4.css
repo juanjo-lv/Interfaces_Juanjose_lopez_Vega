@@ -1,14 +1,29 @@
+.juego{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.marcadores{
+    width: 15%;
+    height: 60vh;
+    margin: 1rem;
+    align-self: flex-start;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
+}
 .tablero{
-    margin: 0 auto;
-    width: 50vw;
-    height: 100vh;
+    margin: 0 ;
+    width: 60vw;
+    height: 95vh;
     background-color: bisque;
     
-
     display: grid;
-    
     grid-template-columns:repeat(3,1fr); 
-    grid-template-rows: repeat(3,1fr);
+    
     grid-gap: 0.5rem;
     padding: 0.5rem;
 
@@ -16,5 +31,19 @@
 }
 .item{
     background-color: blueviolet;
+    border-radius: 1rem; 
+}
+.lateral{
+    width: 100%;
+    height: 4rem;
+    margin-bottom: 2rem;
+    background-color: chocolate;
+    color:bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 1rem;
+}
+.reglas{
+    background-color:goldenrod;
 }
