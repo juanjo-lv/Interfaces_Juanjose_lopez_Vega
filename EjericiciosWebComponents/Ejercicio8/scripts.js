@@ -53,7 +53,7 @@ class progressBar extends HTMLElement{
             return false;
         }
     }
-    app() {
+    app(){
         var inter;
         const time = this.segundos || 0;
         const botonCrecer = this.shadowRoot.getElementById("aceptar");

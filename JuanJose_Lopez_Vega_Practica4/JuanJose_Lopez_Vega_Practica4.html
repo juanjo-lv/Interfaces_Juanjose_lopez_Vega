@@ -7,44 +7,60 @@
     <link rel="stylesheet" href="JuanJose_Lopez_Vega_Practica4.css">
     <script src="JuanJose_Lopez_Vega_Practica4.js"></script>
     <title>Document</title>
+
 </head>
 <body>
     <div class="juego">
+        
         <div class="marcadores">
+            <button id="empezar">EMPEZAR</button>
             <div class="lateral">
-                <span>Tiempo transcurrido:</span> <span id="contador">00:00:00</span>
+                <span>Tiempo transcurrido:</span> <span id="contador"></span>
             </div>
             <div class="lateral">
-                <span>Intentos realizados:</span> <span>0 intentos</span>
+                <span>Fallos cometidos:</span> <span> 0 intentos </span>
             </div>
-            <!-- <details class="reglas">
-                <summary>REGLAS DEL JUEGO</summary>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ipsam soluta cumque. Expedita laudantium velit cum fugit quod! Labore natus eum neque quis mollitia harum explicabo suscipit quibusdam dignissimos! Autem.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, deleniti inventore aliquid consequuntur sapiente aut error mollitia consequatur modi incidunt itaque molestias ipsa tempora. Debitis architecto fugiat odio. Vitae, itaque.</p>
-            </details> -->
+
             <div class="reglas">
-                    <div class="reglas-titulo">REGLAS DEL JUEGO</div>
-                    <div class="desplegado">
-                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, eveniet, explicabo reprehenderit qui exercitationem itaque maiores mollitia earum sunt nostrum ipsam blanditiis laborum. Exercitationem non, id vel perspiciatis voluptatem quo.
-                       Lorem ipsum, dolor sit amet consectetur adipisicing elit. A recusandae magni saepe rerum facere delectus modi eaque? Qui doloribus voluptatem cum quam ab sint odio, obcaecati amet architecto nesciunt minima.
+                    <div class="reglas-titulo">
+                        <img src="imgs/iconos/flecha-abajo.png" alt="" id="fabajo">
+                        <span>REGLAS DEL JUEGO</span>
+                        <img src="imgs/iconos/flecha-abajo.png" alt="" id="farriba">
                     </div>
+                    <div class="desplegado">
+                    <p id="intro">{nombrejuego} Es la versión solitaria del popular juego de cartas Timeline</p>
+                     <ul id="descripcion">
+                         <li>Para comenzar pulsa el botón comenzar, entonces las cartas se repartirán y el tiempo empezará a contar</li>
+                         <li></li>
+                         <li></li>
+                         <li></li>
+                     </ul>
+                </div>
             </div>
+           
             
+           
         </div>
         
         
         <div class="tablero">
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-        </div>
+            <div class="desc">TABLERO DE JUEGO</div>
+            <div class="zona">
+                <div class="muestra"></div>
+                <div class="contenedorResultado">
+                    
+                        <input type="number" placeholder="introduce un año" id="resp">
+                        <button id="botonResolver" type="button">enviar</button>
+                    
+                    <div class="tip">
+                        Resultado
+                    </div>
+                </div>
 
+            </div>
+        </div>
+        
+        
     </div>
 
 
