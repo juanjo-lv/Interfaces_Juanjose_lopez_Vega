@@ -191,9 +191,8 @@ function adivinar(){
       console.log("coloreando a rojo")
     }
     if(fallos==5){
-        //funcion cuando pierdes
+        //funcion que se dispara cuando pierdes por puntos
     }
-    
    })
 }
 /*Clase Cartas que hereda de HTMLElement, cada web component es una carta */
