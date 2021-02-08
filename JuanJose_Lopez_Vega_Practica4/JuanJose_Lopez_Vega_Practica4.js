@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM cargado");
+  desbloquearJuego();
   tiempo();
   mostrar();
   ocultar();
   adivinar()
+
 });
 
 /*Variables a usar durante la ejecución del juego*/
@@ -56,38 +58,47 @@ myTemplate.innerHTML = `
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 }
-
+function desbloquearJuego(){
+  var boton1 = document.getElementById("comenzarJuego");
+  var bienvenido = document.querySelector(".bienvenido");
+  boton1.addEventListener("click",()=>{
+      bienvenido.style.display="none";
+  })
+}
 
 /*la funcion tiempo inicia el tiempo de la partida e inserta el webcomponent*/
 function tiempo() {
   var elemento = document.getElementById("empezar");
   var contador = document.getElementById("contador")
   
-  var hora = 0;
   var min = 0;
-  var sec = 0;
+  var sec = 5;
   
 elemento.addEventListener("click",()=>{
      let temp = setInterval(() => {
        elemento.style.display ="none";
-         sec++;
-         if(sec==59){
-             sec=0;
-             min++;
-             if(min==59){
-                sec =0;
-                min = 0
-                hora++;
-            } 
+         sec--;
+         if(sec==0){
+          if(min==0 && sec==0){
+            clearInterval(temp)
+            // alert("has perdido por tiempo");
+            // location.reload();
+          }else{
+              sec=59;
+              min--;
+          }
          }
-         contador.innerHTML=`${hora} h ${min} min ${sec} s`
+         contador.innerHTML=`${min} min ${sec} s`
+
      }, 1000);
      
      let iniciar = document.querySelector(".muestra");
      iniciar.innerHTML="<carta-historia modo='0'></carta-historia>"
 });  
 }
+function mensajePerder(){
 
+}
 /* Permite mostrar el desplegable que muestra las reglas*/
 function mostrar() {
     let abajo = document.querySelector("#fabajo");
