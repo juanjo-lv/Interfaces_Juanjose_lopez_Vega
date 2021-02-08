@@ -11,6 +11,7 @@
 </head>
 <body>
     <div class="juego">
+
         <div class="mensaje perderIntentos">
             <div class="mensaje_descripcion">
                 <p>Lo siento has gastado todos los intentos posibles</p>
@@ -41,7 +42,7 @@
                 <span>Tiempo restante:</span> <span id="contador"></span>
             </div>
             <div class="lateral">
-                <span>Fallos cometidos:</span> <span> 0 intentos </span>
+                <span>Intentos:</span> <span id="fallos_cometidos"> 0 intentos </span>
             </div>
 
             <div class="reglas">
@@ -71,12 +72,15 @@
             <div class="zona">
                 <div class="muestra"></div>
                 <div class="contenedorResultado">
-                    
-                        <input type="number" placeholder="introduce un año" id="resp">
-                        <button id="botonResolver" type="button">enviar</button>
+                        
+                        <div class="formulario">
+                            <input type="number" placeholder="introduce un año" id="resp">
+                            <button id="botonResolver" type="button">Resolver</button>
+                        </div>
+
                     
                     <div class="tip">
-                        Resultado
+                        
                     </div>
                 </div>
 
