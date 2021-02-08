@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM cargado");
+    console.log("DOM cargado");
 
 });
 
 
 var myTemplate = document.createElement('template');
-myTemplate.innerHTML =`
+myTemplate.innerHTML = `
 <style>
 #contenedor{
     margin-top: 1rem;
@@ -29,64 +29,64 @@ myTemplate.innerHTML =`
         <div id="barra"></div>
     </div>
 `
-class progressBar extends HTMLElement{
-    constructor(){
+class progressBar extends HTMLElement {
+    constructor() {
         super();
         this.attachShadow({ mode: "open" });
         this.clon = myTemplate.content.cloneNode(true);
     }
-    connectedCallback(){
-         
-         if(this.revisar()==false){
-                alert("datos incorrectos revisa el html")
-         }else{
+    connectedCallback() {
+
+        if (this.revisar() == false) {
+            alert("datos incorrectos revisa el html")
+        } else {
             this.shadowRoot.appendChild(this.clon);
-         }
-         
-         this.app();
-         
-      
+        }
+
+        this.app();
+
+
     }
-    revisar(){
+    revisar() {
         const time = this.segundos || 0;
-        if(time == 0 || time<0){
+        if (time == 0 || time < 0) {
             return false;
         }
     }
-    app(){
+    app() {
         var inter;
         const time = this.segundos || 0;
         const botonCrecer = this.shadowRoot.getElementById("aceptar");
         const barra = this.shadowRoot.getElementById("barra");
         var progreso = 0;
         botonCrecer.addEventListener("click", () => {
-          inter = setInterval(() => {
-      
-            if (barra.style.width == `100%`) {
-              clearInterval(inter);
-            }else{
-              barra.style.width = `${progreso}%`;
-             
-             if(progreso<100){
-                 progreso++;
-                 console.log(progreso)
-             }
-              
-            }
-              barra.innerHTML = `<span>${progreso}%</span>`;
-          }, time / 100);
-        });
-        
-            const botonParar = this.shadowRoot.getElementById("parar");
-            botonParar.addEventListener("click",()=>{
-               clearInterval(inter);
-            })
-         
-      }
+            inter = setInterval(() => {
 
-      get segundos(){
-          return this.getAttribute("seconds")
-      } 
+                if (barra.style.width == `100%`) {
+                    clearInterval(inter);
+                } else {
+                    barra.style.width = `${progreso}%`;
+
+                    if (progreso < 100) {
+                        progreso++;
+                        console.log(progreso)
+                    }
+
+                }
+                barra.innerHTML = `<span>${progreso}%</span>`;
+            }, time / 100);
+        });
+
+        const botonParar = this.shadowRoot.getElementById("parar");
+        botonParar.addEventListener("click", () => {
+            clearInterval(inter);
+        })
+
+    }
+
+    get segundos() {
+        return this.getAttribute("seconds")
+    }
 }
 customElements.define("progress-bar", progressBar);
 
