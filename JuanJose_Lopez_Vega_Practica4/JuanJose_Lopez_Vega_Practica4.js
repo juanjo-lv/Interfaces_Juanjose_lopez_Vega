@@ -26,7 +26,7 @@ var coleccion = [
 // se genera un valor al azar para seleccionar una carta de las 10 posibles, y se guarda tanto la imagen y el valor en variables
 var azar = parseInt(getRandomArbitrary(0,9));
 var ruta = coleccion[azar].pregunta;
-var respuesta = coleccion[azar].anio;;
+var correcta = coleccion[azar].anio;;
 var sol = coleccion[azar].solucion;
 
 //Contenido del web component se inserta mediante template
@@ -71,8 +71,8 @@ function tiempo() {
   var elemento = document.getElementById("empezar");
   var contador = document.getElementById("contador")
   
-  var min = 0;
-  var sec = 5;
+  var min = 4;
+  var sec = 59;
   
 elemento.addEventListener("click",()=>{
      let temp = setInterval(() => {
@@ -150,17 +150,50 @@ function ocultar() {
 } 
 function adivinar(){
    var botonResolver = document.getElementById("botonResolver");
-   var vidas = 5;
+   var fallos = 0;
+   var pista = document.querySelector(".tip");
    var element = document.getElementsByTagName("carta-historica");
    botonResolver.addEventListener("click",()=>{
-    var resul = document.getElementById("resp").value;
-    if(respuesta!=resul){
-      alert("has fallado intentalo otra vez")
-    }else{
-      
-      alert("felicidades has ganado")
-      location.reload();
+    var respuesta = document.getElementById("resp").value;
+
+    if((correcta-10)<respuesta && respuesta < correcta){
+      fallos++;
+      pista.innerHTML=`No llegas por muy poco, estás en la decada correcta`;
+      pista.style.backgroundColor="yellow";
+      console.log("coloreando a amarillo")
+    }else if((correcta-100)<respuesta && respuesta < correcta){
+      fallos++;
+      pista.innerHTML=`La fecha es posterior, al menos has acertado el siglo`
+      pista.style.backgroundColor="#DC9D00";
+      console.log("coloreando a naranja")
+    }else if(respuesta<(correcta-101) && respuesta < correcta){
+      fallos++;
+      pista.innerHTML=`La fecha es muy posterior, no llegas por bastante`;
+      pista.style.backgroundColor="red";
+      console.log("coloreando a rojo")
+    }else if(respuesta == correcta){
+      alert("has ganado");
+      //funcion que se dispara cuando ganas
+    }else if((correcta+10)>respuesta && respuesta > correcta){
+      fallos++;
+      pista.innerHTML=`Te pasas por muy poco, estás en la decada correcta`;
+      pista.style.backgroundColor="yellow";
+      console.log("coloreando a amarillo")
+    }else if((correcta+100)>respuesta && respuesta > correcta){
+      fallos++;
+      pista.innerHTML=`Te has pasado, al menos has acertado el siglo`
+      pista.style.backgroundColor="#DC9D00";
+      console.log("coloreando a naranja")
+    }else if(true){
+      fallos++;
+      pista.innerHTML=`Te has pasado por más de un siglo`;
+      pista.style.backgroundColor="red";
+      console.log("coloreando a rojo")
     }
+    if(fallos==5){
+        //funcion cuando pierdes
+    }
+    
    })
 }
 /*Clase Cartas que hereda de HTMLElement, cada web component es una carta */
