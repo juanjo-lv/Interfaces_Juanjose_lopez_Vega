@@ -296,6 +296,9 @@ class Cartas extends HTMLElement {
   }
   connectedCallback() {
     this.shadowRoot.appendChild(this.clon);
+    setTimeout(() => {
+      this.girar();
+    }, 1000); 
   }
   set modo(newVal) {
     return this.setAttribute("modo", newVal);
