@@ -177,11 +177,11 @@ function darPista(){
   pista.style.transition="0.2s"
   let incremento = 0
   let parar = setInterval(() => {
-      pista.style.top=`${incremento+=10}px`;
-      setTimeout(() => {
-        pista.style.top=`${incremento-=10}px`;
-      }, 100);
-      pista.style.left=`${pista.left--}px`
+    pista.style.top=`${incremento+=10}px`;
+    setTimeout(() => {
+      pista.style.top=`${incremento-=10}px`;     
+    }, 100);
+
   }, 16);
 }
 function apareceFormulario(){
@@ -296,9 +296,9 @@ class Cartas extends HTMLElement {
   }
   connectedCallback() {
     this.shadowRoot.appendChild(this.clon);
-    setTimeout(() => {
-      this.girar();
-    }, 1000); 
+    // setTimeout(() => {
+    //   this.girar();
+    // }, 1000); 
   }
   set modo(newVal) {
     return this.setAttribute("modo", newVal);
