@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,80 +10,84 @@
     <title>Document</title>
 
 </head>
+
 <body>
-    
+
     <div class="juego">
-        <texto-mensaje id="bienvenidos">
-            <p slot="miDescripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae minus alias harum natus obcaecati laborum, ipsa veritatis deleniti ad delectus, repellat ab quasi omnis sequi autem doloribus debitis. Unde, maiores!</p>
+        <texto-mensaje id="bienvenidos" mode="0">
+            <p slot="miDescripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae minus alias
+                harum natus obcaecati laborum, ipsa veritatis deleniti ad delectus, repellat ab quasi omnis sequi autem
+                doloribus debitis. Unde, maiores!</p>
             <span slot="miBoton">Comenzar Juego</span>
         </texto-mensaje>
         <texto-mensaje id="fallos">
             <p slot="miDescripcion">Has superado el límite de fallos permitidos</p>
-            <span slot="miBoton">Reintentar</span>
+            <img slot="img" src="imgs/iconos/gameOver.svg">
+            <span slot="bot">Reintentar</span>
         </texto-mensaje>
         <texto-mensaje id="tiempo">
-            <p slot="miDescripcion">Lo sentimos se te ha acabado el tiempo</p>
-            <span slot="miBoton">Reintentar</span>
+            <p slot="miDescripcion">Lástima,te has quedado sin tiempo</p>
+            <img slot="img" src="imgs/iconos/gameOver.svg">
+            <span slot="bot">Reintentar</span>
         </texto-mensaje>
         <texto-mensaje id="ganar">
-            <p slot="miDescripcion">Felicidades has ganado!!</p>
-            <span slot="miBoton">OK</span>
+            <p slot="miDescripcion">Felicidades has ganado!!!</p>
+            <img slot="img" src="imgs/iconos/trofeo.svg">
+            <span slot="bot">Soy buenisimo</span>
         </texto-mensaje>
-
-        <div class="marcadores">
-            <button id="empezar">EMPEZAR</button>
-            <div class="lateral">
-                <span>Tiempo restante:</span> <span id="contador"></span>
-            </div>
-            <div class="lateral">
-                <span>Intentos:</span> <span id="fallos_cometidos"> 0 intentos </span>
-            </div>
-
-            <div class="reglas">
-                    <div class="reglas-titulo">
-                        <img src="imgs/iconos/flecha-abajo.png" alt="" id="fabajo">
-                        <span>REGLAS DEL JUEGO</span>
-                        <img src="imgs/iconos/flecha-abajo.png" alt="" id="farriba">
-                    </div>
-                    <div class="desplegado">
-                    <p id="intro">{nombrejuego} Es la versión solitaria del popular juego de cartas Timeline</p>
-                     <ul id="descripcion">
-                         <li>Para comenzar pulsa el botón comenzar, entonces las cartas se repartirán y el tiempo empezará a contar</li>
-                         <li></li>
-                         <li></li>
-                         <li></li>
-                     </ul>
-                </div>
-            </div>
-           
-            
-           
+    <div class="marcadores">
+        <button id="empezar">EMPEZAR</button>
+        <div class="lateral">
+            <span>TIEMPO RESTANTE:</span> <span id="contador"></span>
         </div>
-        
-        
-        <div class="tablero">
-            <div class="desc">TABLERO DE JUEGO</div>
-            <div class="zona">
-                <div class="muestra"></div>
-                <div class="contenedorResultado">
-                        
-                        <div class="formulario">
-                            <input type="number" placeholder="introduce un año" id="resp">
-                            <button id="botonResolver" type="button">Resolver</button>
-                        </div>
+        <div class="lateral">
+            <span>INTENTOS:</span> <span id="fallos_cometidos"></span>
+        </div>
 
-                    
-                    <div class="tip">
-                        
-                    </div>
-                </div>
-
+        <div class="reglas">
+            <div class="reglas-titulo">
+                <img src="imgs/iconos/flecha-abajo.png" alt="" id="fabajo">
+                <span>REGLAS DEL JUEGO</span>
+                <img src="imgs/iconos/flecha-abajo.png" alt="" id="farriba">
+            </div>
+            <div class="desplegado">
+                <p id="intro">{nombrejuego} Es la versión solitaria del popular juego de cartas Timeline</p>
+                <ul id="descripcion">
+                    <li>Para comenzar pulsa el botón comenzar, entonces las cartas se repartirán y el tiempo empezará a
+                        contar</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
             </div>
         </div>
-        
-        
+
+
+
+    </div>
+
+
+    <div class="tablero">
+        <div class="desc">TABLERO DE JUEGO</div>
+        <div class="zona">
+            <div class="muestra"></div>
+            <div class="contenedorResultado">
+                <div class="formulario">
+                    <input type="number" placeholder="introduce un año" id="resp">
+                    <button id="botonResolver" type="button">Resolver</button>
+                </div>
+                <div class="tip">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
     </div>
 
 
 </body>
+
 </html>

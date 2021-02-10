@@ -105,7 +105,8 @@ function tiempo() {
         if (min == 0 && sec == 0) {
           clearInterval(temp);
           //si se acaba el tiempo se acaba la partida
-          location.reload();
+          let perderTiempo = document.getElementById("tiempo");
+          perderTiempo.style.display="block";
         } else {
           sec = 59;
           min--;
@@ -116,6 +117,9 @@ function tiempo() {
 
 
   });
+  
+ 
+  
 }
 function mensajePerder() {}
 /* Permite mostrar el desplegable que muestra las reglas*/
@@ -217,8 +221,8 @@ function adivinar() {
       intentos.innerHTML=` ${fallos}`;
       darPista()
     } else if (respuesta == correcta) {
-      alert("has ganado");
-      //funcion que se dispara cuando ganas
+      let ganar = document.getElementById("ganar");
+      ganar.style.display="block";
     } else if (correcta + 10 > respuesta && respuesta > correcta) {
       fallos++;
       pista.innerHTML = `Te pasas por muy poco</br> estás en la decada correcta`;
@@ -239,8 +243,9 @@ function adivinar() {
       darPista()
     }
     if (fallos == 5) {
-      //funcion que se dispara cuando pierdes por puntos
-      location.reload();
+      //En caso de que los fallos lleguen a 5 el mensaje de perder aparece
+      let perderFallos = document.getElementById("fallos");
+      perderFallos.style.display="block";
     }
   });
 }
@@ -343,7 +348,7 @@ myTemplateMensajes.innerHTML=`
   <div class="mensaje_descripcion">
     <p><slot name="miDescripcion">....</slot></p>
     <div><slot name="img"></slot></div>
-    <button type="button" id="aceptar"><slot name="miBoton">Comenzar</slot></button>
+    <button type="button" id="aceptar"><slot name="bot">Confirmar</slot></button>
   </div>
 </div>
 
@@ -365,6 +370,10 @@ class Mensaje extends HTMLElement{
     const desbloc = this.shadowRoot.querySelector(".mensaje");
     iniciar.addEventListener("click", () => {
       desbloc.style.display = "none";
+      if(this.getAttribute("mode")!="0"){
+        location.reload();
+      }
+      
     });
   }
 }
