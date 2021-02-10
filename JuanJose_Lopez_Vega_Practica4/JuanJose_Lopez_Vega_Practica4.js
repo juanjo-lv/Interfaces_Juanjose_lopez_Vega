@@ -342,6 +342,7 @@ myTemplateMensajes.innerHTML=`
 <div class="mensaje">
   <div class="mensaje_descripcion">
     <p><slot name="miDescripcion">....</slot></p>
+    <div><slot name="img"></slot></div>
     <button type="button" id="aceptar"><slot name="miBoton">Comenzar</slot></button>
   </div>
 </div>

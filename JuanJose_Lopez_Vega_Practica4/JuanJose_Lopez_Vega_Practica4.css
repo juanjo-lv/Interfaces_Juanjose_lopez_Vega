@@ -3,7 +3,15 @@
     flex-direction: column;
    
 }
+
 /*Mensajes de la partida*/
+#bienvenidos p{
+    text-align: center;
+    padding: 1rem;
+}
+#bienvenidos span{
+    
+}
 #fallos{
     display: none;
 }
