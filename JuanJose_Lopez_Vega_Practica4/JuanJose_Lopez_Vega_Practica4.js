@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM cargado");
-  desbloquearJuego();
+  //desbloquearJuego();
   tiempo();
   mostrar();
   ocultar();
@@ -73,13 +73,6 @@ var sol = coleccion[azar].solucion;
 // genera un numero aleatorio entre 0 y 9 para que salga una carta al azar entre toda la colección
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
-}
-function desbloquearJuego() {
-  var boton1 = document.getElementById("comenzarJuego");
-  var bienvenido = document.querySelector(".bienvenido");
-  boton1.addEventListener("click", () => {
-    bienvenido.style.display = "none";
-  });
 }
 
 /*la funcion tiempo inicia el tiempo de la partida e inserta el webcomponent*/
@@ -344,24 +337,35 @@ myTemplateMensajes.innerHTML=`
   align-items: center;
   
 }
-<style>
-<div class="mensaje perderIntentos">
+</style>
+
+<div class="mensaje">
   <div class="mensaje_descripcion">
-    <p>Lo siento has gastado todos los intentos posibles</p>  
+    <p><slot name="miDescripcion">....</slot></p>
+    <button type="button" id="aceptar"><slot name="miBoton">Comenzar</slot></button>
   </div>
 </div>
+
 `;
 class Mensaje extends HTMLElement{
   constructor(){
     super()
     this.attachShadow({mode:"open"});
-    this.clon2 = myTemplateMensajes.conten.cloneNode(true);
+    this.clon2 = myTemplateMensajes.content.cloneNode(true);
   }
   connectedCallback(){
-
+    this.shadowRoot.appendChild(this.clon2);
+    this.desbloquearJuego();
+    
+    
   }
-
-
+  desbloquearJuego() {
+    const iniciar = this.shadowRoot.getElementById("aceptar")
+    const desbloc = this.shadowRoot.querySelector(".mensaje");
+    iniciar.addEventListener("click", () => {
+      desbloc.style.display = "none";
+    });
+  }
 }
-
+customElements.define("texto-mensaje",Mensaje);
 customElements.define("carta-historia", Cartas);

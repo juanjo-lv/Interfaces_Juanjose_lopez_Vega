@@ -4,51 +4,17 @@
    
 }
 /*Mensajes de la partida*/
-
-.mensaje{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.103);
-    backdrop-filter: blur(1rem);
-    z-index: 2;
-}
-
-.mensaje_descripcion{
-    position: relative;
-    top: 25%;
-    left: 30%;
-    width: 40vw;
-    height: 40vh;
-    
-    background-color: white;
-    border-radius: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    
-}
-#comenzarJuego{
-    width: 15%;
-    height: 8%;
-    background-color: orange;
-    border-radius: 0.4rem;
-}
-.perderIntentos{
+#fallos{
     display: none;
 }
-.perderTiempo{
+#tiempo{
     display: none;
 }
-.victoria{
+#ganar{
     display: none;
 }
-.bienvenido{
-    display: block;
+#perder{
+    display: none;
 }
 
 /*Marcadores y panel de reglas*/

@@ -10,13 +10,14 @@
 
 </head>
 <body>
+    
     <div class="juego">
 
-        <div class="mensaje perderIntentos">
+        <!-- <div class="mensaje perderIntentos">
             <div class="mensaje_descripcion">
-                <p>Lo siento has gastado todos los intentos posibles</p>
-                
+                <p>Lo siento has gastado todos los intentos posibles</p> 
             </div>
+            
         </div>
         <div class=" mensaje perderTiempo">
             <div class="mensaje_descripcion">
@@ -29,13 +30,29 @@
                     <p>Bienvenido a {nombre} version española, el juego de adivinar la fecha exacta</p>
                     <button type="button" id="comenzarJuego">Comenzar</button>
                 </div>
+               
         </div>
+        <texto-mensaje></texto-mensaje>
         <div class="mensaje victoria">
             <div class="mensaje_descripcion">
                 <p>Bienvenido a {nombre} version española, el juego de adivinar la fecha exacta</p>
                 <button type="button" id="botonVictora">Jugar de Nuevo</button>
         </div>
-    </div>
+        </div> -->
+        <texto-mensaje id="bienvenidos">
+            <slot name="miDescripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae minus alias harum natus obcaecati laborum, ipsa veritatis deleniti ad delectus, repellat ab quasi omnis sequi autem doloribus debitis. Unde, maiores!</slot>
+            <slot name="miBoton">Comenzar Juego</slot>
+        </texto-mensaje>
+        <texto-mensaje id="fallos">
+
+        </texto-mensaje>
+        <texto-mensaje id="tiempo">
+
+        </texto-mensaje>
+        <texto-mensaje id="ganar">
+
+        </texto-mensaje>
+
         <div class="marcadores">
             <button id="empezar">EMPEZAR</button>
             <div class="lateral">
