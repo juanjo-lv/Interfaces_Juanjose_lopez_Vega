@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM cargado");
-  //desbloquearJuego();
   tiempo();
   mostrar();
   ocultar();
@@ -95,7 +94,7 @@ function tiempo() {
     apareceFormulario();
     /*se inserta el webcomponent que corresponde a la carta*/
     let iniciar = document.querySelector(".muestra");
-    iniciar.innerHTML = "<carta-historia modo='0'></carta-historia>";
+    iniciar.innerHTML = "<carta-historia id='miCarta' modo='0' cara='0'></carta-historia>";
     
     
     /*Lleva el tiempo de la partida*/
@@ -106,7 +105,12 @@ function tiempo() {
           clearInterval(temp);
           //si se acaba el tiempo se acaba la partida
           let perderTiempo = document.getElementById("tiempo");
+          let carta = document.getElementById("miCarta");
+          carta.setAttribute("cara",1);
+         let parar = setTimeout(() => {
           perderTiempo.style.display="block";
+           clearTimeout(parar)
+         }, 1500 );
         } else {
           sec = 59;
           min--;
@@ -143,7 +147,7 @@ function mostrar() {
         setTimeout(() => {
           oculto.style.visibility = "visible";
           
-        }, 600);
+        }, 500);
       }
     }, 16);
     /*animacion de mostrar contenido a 60fps*/
@@ -169,17 +173,7 @@ function ocultar() {
   });
 }
 function darPista(){
-  let pista = document.querySelector(".tip");
-  pista.style.visibility="visible";
-  pista.style.transition="0.2s"
-  let incremento = 0
-  let parar = setInterval(() => {
-    pista.style.top=`${incremento+=10}px`;
-    setTimeout(() => {
-      pista.style.top=`${incremento-=10}px`;     
-    }, 100);
-
-  }, 16);
+/* Añadir request animation frame*/
 }
 function apareceFormulario(){
     let formulario = document.querySelector(".formulario");
@@ -192,6 +186,7 @@ function apareceFormulario(){
     }, 16);
     
 }
+
 function adivinar() {
   var botonResolver = document.getElementById("botonResolver");
   var fallos = 0;
@@ -200,6 +195,9 @@ function adivinar() {
   var element = document.getElementsByTagName("carta-historica");
   botonResolver.addEventListener("click", () => {
     var respuesta = document.getElementById("resp").value;
+    
+    pista.style.visibility="visible";
+    pista.style.transition="0.2s"
 
     if (correcta - 10 < respuesta && respuesta < correcta) {
       fallos++;
@@ -213,27 +211,37 @@ function adivinar() {
       pista.innerHTML = `  La fecha es posterior al </br> menos has acertado el siglo`;
       pista.style.backgroundColor = "#DC9D00";
       intentos.innerHTML=` ${fallos}`;
-      darPista()
+      darPista();
+      
     } else if (respuesta < correcta - 101 && respuesta < correcta) {
       fallos++;
       pista.innerHTML = `La fecha es muy posterior</br> no llegas por bastante`;
       pista.style.backgroundColor = "red";
       intentos.innerHTML=` ${fallos}`;
+     
       darPista()
     } else if (respuesta == correcta) {
       let ganar = document.getElementById("ganar");
+      let carta = document.getElementById("miCarta");
+      carta.setAttribute("cara",1);
+     let parar = setTimeout(() => {
       ganar.style.display="block";
+       clearTimeout(parar)
+     }, 1500 );
+
     } else if (correcta + 10 > respuesta && respuesta > correcta) {
       fallos++;
       pista.innerHTML = `Te pasas por muy poco</br> estás en la decada correcta`;
       pista.style.backgroundColor = "yellow";
       intentos.innerHTML=` ${fallos}`;
+      
       darPista()
     } else if (correcta + 100 > respuesta && respuesta > correcta) {
       fallos++;
       pista.innerHTML = `Te has pasado </br> al menos has acertado el siglo`;
       pista.style.backgroundColor = "#DC9D00";
       intentos.innerHTML=` ${fallos}`;
+      
       darPista()
     } else if (true) {
       fallos++;
@@ -245,7 +253,13 @@ function adivinar() {
     if (fallos == 5) {
       //En caso de que los fallos lleguen a 5 el mensaje de perder aparece
       let perderFallos = document.getElementById("fallos");
-      perderFallos.style.display="block";
+       let carta = document.getElementById("miCarta");
+       carta.setAttribute("cara",1);
+      let parar = setTimeout(() => {
+        perderFallos.style.display="block";
+        clearTimeout(parar)
+      }, 1500 );
+      
     }
   });
 }
@@ -294,9 +308,13 @@ class Cartas extends HTMLElement {
   }
   connectedCallback() {
     this.shadowRoot.appendChild(this.clon);
-    // setTimeout(() => {
-    //   this.girar();
-    // }, 1000); 
+  }
+
+  get cara(){
+    return this.getAttribute("cara");
+  }
+  set cara(newVal){
+    return this.setAttribute("cara",newVal)
   }
   set modo(newVal) {
     return this.setAttribute("modo", newVal);
@@ -304,6 +322,14 @@ class Cartas extends HTMLElement {
   get modo() {
     return this.getAttribute("modo");
   }
+
+  static get observedAttributes(){
+    return ['cara'];
+  }
+  attributeChangedCallback(nombre,viejo,nuevo){
+     this.girar();
+  }
+  /*Propiedad que hace que la carta gire mostrando la solución*/
   girar(){
     this.shadowRoot.querySelector(".carta").style.transform = `rotateY(180deg)`;
     this.shadowRoot.querySelector(".prueba").style.visibility = `hidden`;
@@ -341,6 +367,9 @@ myTemplateMensajes.innerHTML=`
   justify-content: space-evenly;
   align-items: center;
   
+}
+p{
+  font-family: 'Fredoka One', cursive;
 }
 </style>
 

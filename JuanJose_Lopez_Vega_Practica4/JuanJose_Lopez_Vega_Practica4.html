@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="JuanJose_Lopez_Vega_Practica4.css">
     <script src="JuanJose_Lopez_Vega_Practica4.js"></script>
-    <title>Document</title>
+    <title>Historic-Dates</title>
 
 </head>
 
@@ -15,9 +15,7 @@
 
     <div class="juego">
         <texto-mensaje id="bienvenidos" mode="0">
-            <p slot="miDescripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae minus alias
-                harum natus obcaecati laborum, ipsa veritatis deleniti ad delectus, repellat ab quasi omnis sequi autem
-                doloribus debitis. Unde, maiores!</p>
+            <p slot="miDescripcion">Historic-Dates es un juego de adivinar fechas históricas españolas en el que deberás enfrentarte al cronómetro y tendrás un numero limitado de vidas para ganar</p>
             <span slot="miBoton">Comenzar Juego</span>
         </texto-mensaje>
         <texto-mensaje id="fallos">
@@ -51,17 +49,16 @@
                 <img src="imgs/iconos/flecha-abajo.png" alt="" id="farriba">
             </div>
             <div class="desplegado">
-                <p id="intro">{nombrejuego} Es la versión solitaria del popular juego de cartas Timeline</p>
+                <p id="intro"></p>
                 <ul id="descripcion">
-                    <li>Para comenzar pulsa el botón comenzar, entonces las cartas se repartirán y el tiempo empezará a
-                        contar</li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>Pulsa empezar para iniciar tus 3 minutos y visualizar la carta a adivinar</li>
+                    <li>Introduce tu predicción en el recuadro de texto y clickea en enviar cada vez que lo hagas contará como un intento, si fallas perderás una vida</li>
+                    <li>Tienes 5 vidas para acertar el acontecimiento historico si las consumes o se te acaba el tiempo, pierdes</li>
+                    <li>Al fallar aparecerá un mensaje en rojo (si fallas por más de 100 años ) , naranja ( si estás en un rango de 100 años) o amarillo( si estás en un rango de 10) </li>
                 </ul>
             </div>
         </div>
-
+        
 
 
     </div>
