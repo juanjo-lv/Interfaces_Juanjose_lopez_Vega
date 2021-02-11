@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio2</title>
+  </head>
+  <body>
+    <audio id="audio" loop>
+      <source src="sources/betterJungleWins.mp3" type="" />
+      <source src="sources/betterJungleWins.ogg" type="" />
+    </audio>
+    <button id="iniciar">Iniciar video</button>
+    <button id="parar">Parar video</button>
+    <input type="range" id="vol" min="0" max="1" step="0.1">
+
+    <script>
+        let iniciar = document.getElementById("iniciar");
+        let parar = document.getElementById("parar");
+        let vol = document.getElementById("vol");
+        iniciar.addEventListener("click",()=>{
+           document.getElementById("audio").play();
+        })
+        parar.addEventListener("click",()=>{
+           document.getElementById("audio").pause();
+        })
+        vol.addEventListener("change",(ev)=>{
+            document.getElementById("audio").volume = ev.currentTarget.value;
+        },true)
+    </script>
+  </body>
+</html>
