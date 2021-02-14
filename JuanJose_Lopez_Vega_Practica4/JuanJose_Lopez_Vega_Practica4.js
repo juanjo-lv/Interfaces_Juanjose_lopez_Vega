@@ -339,13 +339,6 @@ class Cartas extends HTMLElement {
   set cara(newVal){
     return this.setAttribute("cara",newVal)
   }
-  set modo(newVal) {
-    return this.setAttribute("modo", newVal);
-  }
-  get modo() {
-    return this.getAttribute("modo");
-  }
-
   static get observedAttributes(){
     return ['cara'];
   }
@@ -354,7 +347,8 @@ class Cartas extends HTMLElement {
   }
   /*Propiedad que hace que la carta gire mostrando la solución*/
   girar(){
-    this.shadowRoot.querySelector(".carta").style.transform = `rotateY(180deg)`;
+    
+    this.shadowRoot.querySelector(".carta").style.transform = `rotateY(`+180+`deg)`;
     this.shadowRoot.querySelector(".prueba").style.visibility = `hidden`;
     this.shadowRoot.querySelector(".solucion").style.visibility = `visible`;
   }
