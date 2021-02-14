@@ -67,6 +67,8 @@ var ruta = coleccion[azar].pregunta;
 var correcta = coleccion[azar].anio;
 var sol = coleccion[azar].solucion;
 
+
+
 /*  FUNCIONES PARA QUE SE USAN DURANTE EL JUEGO:*/
 
 // genera un numero aleatorio entre 0 y 9 para que salga una carta al azar entre toda la colección
@@ -94,7 +96,12 @@ function tiempo() {
     apareceFormulario();
     /*se inserta el webcomponent que corresponde a la carta*/
     let iniciar = document.querySelector(".muestra");
-    iniciar.innerHTML = "<carta-historia id='miCarta' modo='0' cara='0'></carta-historia>";
+    /*Atributo cara 
+          0 : si la carta no ha girado mostrando la solución
+          1 : para que la carta gire mostrando la solución
+          mediante un attributechangedcallback se llama a un metodo de la clase llamado girar 
+    */      
+    iniciar.innerHTML = "<carta-historia id='miCarta' cara='0'></carta-historia>";
     
     
     /*Lleva el tiempo de la partida*/
@@ -125,8 +132,7 @@ function tiempo() {
  
   
 }
-function mensajePerder() {}
-/* Permite mostrar el desplegable que muestra las reglas*/
+/* mostar y ocultar son para el desplegable de reglas*/
 function mostrar() {
   let abajo = document.querySelector("#fabajo");
   let arriba = document.querySelector("#farriba");
@@ -172,9 +178,8 @@ function ocultar() {
     }, 450);
   });
 }
-function darPista(){
-/* Añadir request animation frame*/
-}
+
+/* implementa una animación para que el formulario donde el jugador contesta caiga del cielo cuando se inicia el juego*/
 function apareceFormulario(){
     let formulario = document.querySelector(".formulario");
     let incremento = 0;
@@ -186,13 +191,32 @@ function apareceFormulario(){
     }, 16);
     
 }
+function darPista(){
+var start = null;
+var element = document.querySelector('.tip');
+
+function step(timestamp) {
+  if (!start) start = timestamp;
+  var progress = timestamp - start;
+  element.style.transform = 'translateY(' + Math.min(progress / 10, 200) + 'px)';
+  if (progress < 2000) {
+    var ani = window.requestAnimationFrame(step);
+  }else{
+    cancelAnimationFrame(ani);
+    element.style.transform = 'translateY(' + Math.min(progress / 10, 0) + 'px)';
+  }
+  
+}
+window.requestAnimationFrame(step);
+}
+
 
 function adivinar() {
   var botonResolver = document.getElementById("botonResolver");
   var fallos = 0;
   var pista = document.querySelector(".tip");
   var intentos = document.querySelector("#fallos_cometidos");
-  var element = document.getElementsByTagName("carta-historica");
+ 
   botonResolver.addEventListener("click", () => {
     var respuesta = document.getElementById("resp").value;
     
@@ -204,22 +228,22 @@ function adivinar() {
       pista.innerHTML = `No llegas por muy poco</br> estás en la decada correcta`;
       pista.style.backgroundColor = "yellow";
       intentos.innerHTML=` ${fallos}`;
-      darPista();
+    
       
     } else if (correcta - 100 < respuesta && respuesta < correcta) {
       fallos++;
       pista.innerHTML = `  La fecha es posterior al </br> menos has acertado el siglo`;
       pista.style.backgroundColor = "#DC9D00";
       intentos.innerHTML=` ${fallos}`;
-      darPista();
+     
       
     } else if (respuesta < correcta - 101 && respuesta < correcta) {
       fallos++;
       pista.innerHTML = `La fecha es muy posterior</br> no llegas por bastante`;
       pista.style.backgroundColor = "red";
       intentos.innerHTML=` ${fallos}`;
+      darPista();
      
-      darPista()
     } else if (respuesta == correcta) {
       let ganar = document.getElementById("ganar");
       let carta = document.getElementById("miCarta");
@@ -235,20 +259,19 @@ function adivinar() {
       pista.style.backgroundColor = "yellow";
       intentos.innerHTML=` ${fallos}`;
       
-      darPista()
+    
     } else if (correcta + 100 > respuesta && respuesta > correcta) {
       fallos++;
       pista.innerHTML = `Te has pasado </br> al menos has acertado el siglo`;
       pista.style.backgroundColor = "#DC9D00";
       intentos.innerHTML=` ${fallos}`;
       
-      darPista()
     } else if (true) {
       fallos++;
       pista.innerHTML = `Te has pasado por más de un siglo`;
       pista.style.backgroundColor = "red";
       intentos.innerHTML=` ${fallos}`;
-      darPista()
+    
     }
     if (fallos == 5) {
       //En caso de que los fallos lleguen a 5 el mensaje de perder aparece
@@ -337,6 +360,8 @@ class Cartas extends HTMLElement {
   }
   
 }
+
+
 /* Clase mensaje */
 var myTemplateMensajes = document.createElement("template");
 myTemplateMensajes.innerHTML=`
