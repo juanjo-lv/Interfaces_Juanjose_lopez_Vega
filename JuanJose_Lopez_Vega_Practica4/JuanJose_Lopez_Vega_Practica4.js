@@ -228,14 +228,14 @@ function adivinar() {
       pista.innerHTML = `No llegas por muy poco</br> estás en la decada correcta`;
       pista.style.backgroundColor = "yellow";
       intentos.innerHTML=` ${fallos}`;
-    
+      darPista();
       
     } else if (correcta - 100 < respuesta && respuesta < correcta) {
       fallos++;
       pista.innerHTML = `  La fecha es posterior al </br> menos has acertado el siglo`;
       pista.style.backgroundColor = "#DC9D00";
       intentos.innerHTML=` ${fallos}`;
-     
+      darPista();
       
     } else if (respuesta < correcta - 101 && respuesta < correcta) {
       fallos++;
@@ -258,22 +258,22 @@ function adivinar() {
       pista.innerHTML = `Te pasas por muy poco</br> estás en la decada correcta`;
       pista.style.backgroundColor = "yellow";
       intentos.innerHTML=` ${fallos}`;
-      
+      darPista();
     
     } else if (correcta + 100 > respuesta && respuesta > correcta) {
       fallos++;
       pista.innerHTML = `Te has pasado </br> al menos has acertado el siglo`;
       pista.style.backgroundColor = "#DC9D00";
       intentos.innerHTML=` ${fallos}`;
-      
+      darPista();
     } else if (true) {
       fallos++;
       pista.innerHTML = `Te has pasado por más de un siglo`;
       pista.style.backgroundColor = "red";
       intentos.innerHTML=` ${fallos}`;
-    
+      darPista();
     }
-    if (fallos == 5) {
+    if (fallos > 5) {
       //En caso de que los fallos lleguen a 5 el mensaje de perder aparece
       let perderFallos = document.getElementById("fallos");
        let carta = document.getElementById("miCarta");
