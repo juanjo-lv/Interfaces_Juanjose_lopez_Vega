@@ -37,7 +37,7 @@ var coleccion = [
   },
   {
     pregunta: "imgs/cartas/frontales/Meninas.PNG",
-    anio: 1571,
+    anio: 1656,
     solucion: "imgs/cartas/reversos/MeninasReverso.PNG",
   },
   {
@@ -198,8 +198,8 @@ var element = document.querySelector('.tip');
 function step(timestamp) {
   if (!start) start = timestamp;
   var progress = timestamp - start;
-  element.style.transform = 'translateY(' + Math.min(progress / 10, 200) + 'px)';
-  if (progress < 2000) {
+  element.style.transform = 'translateY(' + Math.min(progress / 10, 100) + 'px)';
+  if (progress < 1000) {
     var ani = window.requestAnimationFrame(step);
   }else{
     cancelAnimationFrame(ani);
@@ -226,27 +226,33 @@ function adivinar() {
     if (correcta - 10 < respuesta && respuesta < correcta) {
       fallos++;
       pista.innerHTML = `No llegas por muy poco</br> estás en la decada correcta`;
-      pista.style.backgroundColor = "yellow";
+      pista.style.backgroundColor = "#F7F130";
+      pista.style.boxShadow=`#F7E230 8px 8px`;
       intentos.innerHTML=` ${fallos}`;
       darPista();
       
     } else if (correcta - 100 < respuesta && respuesta < correcta) {
       fallos++;
-      pista.innerHTML = `  La fecha es posterior al </br> menos has acertado el siglo`;
-      pista.style.backgroundColor = "#DC9D00";
+      pista.innerHTML = `  La fecha es posterior </br> al menos has acertado el siglo`;
+      pista.style.backgroundColor = "#FFC300";
+      pista.style.boxShadow=`#F78430 8px 8px`;
       intentos.innerHTML=` ${fallos}`;
       darPista();
       
     } else if (respuesta < correcta - 101 && respuesta < correcta) {
       fallos++;
       pista.innerHTML = `La fecha es muy posterior</br> no llegas por bastante`;
-      pista.style.backgroundColor = "red";
+      pista.style.backgroundColor = "#C70039";
+      pista.style.boxShadow=`purple 8px 8px`;
       intentos.innerHTML=` ${fallos}`;
       darPista();
      
     } else if (respuesta == correcta) {
       let ganar = document.getElementById("ganar");
       let carta = document.getElementById("miCarta");
+      pista.innerHTML = `Felicidades has conseguido acertar la fecha`;
+      pista.style.backgroundColor = "#55FF33";
+      pista.style.boxShadow=`#F78430 8px 8px`;
       carta.setAttribute("cara",1);
      let parar = setTimeout(() => {
       ganar.style.display="block";
@@ -256,20 +262,23 @@ function adivinar() {
     } else if (correcta + 10 > respuesta && respuesta > correcta) {
       fallos++;
       pista.innerHTML = `Te pasas por muy poco</br> estás en la decada correcta`;
-      pista.style.backgroundColor = "yellow";
+      pista.style.backgroundColor = "#F7F130";
+      pista.style.boxShadow=`#F7E230 8px 8px`;
       intentos.innerHTML=` ${fallos}`;
       darPista();
     
     } else if (correcta + 100 > respuesta && respuesta > correcta) {
       fallos++;
       pista.innerHTML = `Te has pasado </br> al menos has acertado el siglo`;
-      pista.style.backgroundColor = "#DC9D00";
+      pista.style.backgroundColor = "#FFC300";
+      pista.style.boxShadow=`#F78430 8px 8px`;
       intentos.innerHTML=` ${fallos}`;
       darPista();
-    } else if (true) {
+    }else if(respuesta > correcta - 101 && respuesta > correcta) {
       fallos++;
       pista.innerHTML = `Te has pasado por más de un siglo`;
-      pista.style.backgroundColor = "red";
+      pista.style.backgroundColor = "#C70039";
+      pista.style.boxShadow=`purple 8px 8px`;
       intentos.innerHTML=` ${fallos}`;
       darPista();
     }

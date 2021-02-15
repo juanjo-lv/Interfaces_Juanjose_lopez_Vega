@@ -235,10 +235,14 @@
     position: relative;
     top: 20%;  
     width: 12rem;
-    height: 8rem;
-    border-radius: 80%;
+    height: 4rem;
+    border-radius: 0.8rem;
     padding: 1rem;
-    border: 2px solid black;
     display: flex;
+    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
     align-items: center;
+    justify-content: center;
+    text-align: center;
 }
