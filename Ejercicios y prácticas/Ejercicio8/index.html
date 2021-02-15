@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contenedor{
+            width: 50vw;
+            height: 70vh;
+            border: 1px solid black;
+        }
+        .item{
+            width: 75px;
+            height: 75px;
+            background-image: url("images/dvd-rom-logotype.svg");
+            position: relative;
+
+            left: 50%;
+            top: 0%;
+
+            transform: translateX(-50%);
+
+
+            /*animation-name: dvd;*/
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes dvd{
+            from { left: 50%; top: 0%;}
+            25%{ left: 100%; top: 50%;}
+            50%{left: 25%; top: 50%;}
+            75%{left: 0%; top:25%}
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="item"></div>
+    </div>
+</body>
+</html>
