@@ -10,6 +10,7 @@
             width: 50vw;
             height: 70vh;
             border: 1px solid black;
+            margin: 0 auto;
         }
         .item{
             width: 75px;
@@ -23,16 +24,18 @@
             transform: translateX(-50%);
 
 
-            /*animation-name: dvd;*/
+
+            animation-name: dvd;
             animation-duration: 10s;
-            animation-iteration-count: infinite;
+           animation-iteration-count: infinite;
         }
 
         @keyframes dvd{
-            from { left: 50%; top: 0%;}
-            25%{ left: 100%; top: 50%;}
-            50%{left: 25%; top: 50%;}
-            75%{left: 0%; top:25%}
+            from{ left: 50%; top: 0%;}
+            25%{ left: 95%; top: 50%;}
+            50%{ left: 50%; top:90%;}
+            75%{ left: 5% ; top: 50%;}
+            to{left: 50%; top: 0%;}
         }
     </style>
 </head>
