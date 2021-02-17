@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mensaje{
+            
+            /*dimensiones*/
+            height: 3rem;
+            width: 15rem;
+            font-size: 20px;
+            border-radius: 1rem;
+            background-color: aquamarine;
+            margin-top: 15%;
+            
+            /*posicion*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+            left: 0%;
+
+            /*animacion*/
+            animation-name: giro;
+            animation-delay: 2s ;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+
+        }
+        @keyframes giro {
+            from{left: calc(100% - 15rem);}
+            25%{left: calc(100% - 15rem); transform: rotate(90deg);}
+            50%{left: calc(60% - 15rem); transform: rotate(180deg);}
+            75%{left: calc(30% - 15rem); transform: rotate(270deg);}
+            to{left: 0%; transform: rotate(0deg);}
+        }
+    </style>
+</head>
+<body>
+    <p id="mensaje">ESTOY GIRANDO</p>
+</body>
+</html>

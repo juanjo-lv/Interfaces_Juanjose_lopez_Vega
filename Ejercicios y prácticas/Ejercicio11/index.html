@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item{
+            width: 160px;
+            height: 160px;
+            font-size: 1rem;
+            background-color: red;
+            margin: 2rem;
+
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            transition: all 4s;
+           
+        }
+        .item:hover{
+            background-color: blue;
+            color: yellow;
+            width: 80px;
+            height: 80px;
+            font-size: 1.5rem;
+            transform: rotate(270deg);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">Caja1</div>
+        <div class="item">Caja2</div>
+        <div class="item">Caja3</div>
+        <div class="item">Caja4</div>
+    </div>
+    <button id="ida">Desplaza a la derecha e intercalar</button>
+    <button id="vuelta">Volver a la posicion inicial</button>
+    <script>
+        let elementos = document.querySelectorAll(".item");
+        let botIda = document.querySelector("#ida");
+        let botVuelta = document.querySelector("#vuelta");
+        botIda.addEventListener("click",()=>{
+            console.log(elementos)
+            elementos.forEach(element => {
+                element.style.setProperty("margin-left","90vw");
+            });
+        })
+        botVuelta.addEventListener("click",()=>{
+            console.log(elementos)
+            elementos.forEach(element => {
+                element.style.setProperty("margin-left","0px");
+            });
+        })
+    </script>
+</body>
+</html>
