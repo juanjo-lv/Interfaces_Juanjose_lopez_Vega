@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Practica 3</title>
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo-grande"></a>
+        <form action="#">
+            <input type="text" placeholder="search" class="barra">
+        </form>
+        <!-- EL autoplay en firefox funciona perfectamente en chrome si refrescas en visualstudio con el liveserver también pero si en cambio 
+        refrescas con F5 no se reproduce automaticamente -->
+        <audio autoplay loop controls muted>
+            <source src="sounds/pajaritos.ogg" type="">
+            <source src="sounds/pajaritos.mp3" type="">
+            Tu navegador no soporta este formato de audio    
+        </audio>
+  
+        <div class="usuario">
+            <a href="#"><img class="icono fav" src="img/corazon.png" alt=""></a>
+            <a href="#"><img class="icono carrito" src="img/carrito.png" alt=""></a>
+            <a href="#" class="log">Registrarse</a>
+            <a href="#" class="log">Iniciar sesión</a>
+            <img src="img/conf.png" alt="" class="opciones">
+        </div>
+    </header>
+    <nav>
+        <div class="breadcrump">
+            <a href=""><span>Inicio</span></a>
+            <div class="separador">></div>
+            <a href=""><span>Perros</span></a>
+            <div class="separador">></div>
+            <a href=""><span>Alimentación</span></a>
+        </div>
+        <ul class="desplegable">
+            <li class="perro"><a href="#"><span>Perros</span></a>
+                <ul class="submenu">
+                    <li><a href="#">Alimentación</a></li>
+                    <li><a href="#">Refugios</a></li>
+                    <li><a href="#">Salud</a></li>
+                    <li><a href="#">Accesorios</a></li>
+                </ul>
+            </li>
+            <li class="gato"><a href="#"><span>Gatos</span></a>
+                <ul class="submenu">
+                    <li><a href="#">Alimentación</a></li>
+                    <li><a href="#">Refugios</a></li>
+                    <li><a href="#">Salud</a></li>
+                    <li><a href="#">Accesorios</a></li>
+                </ul>
+            </li>
+            <li class="ave"><a href="#"><span>Aves</span></a>
+                <ul class="submenu">
+                    <li><a href="#">Alimentación</a></li>
+                    <li><a href="#">Refugios</a></li>
+                    <li><a href="#">Salud</a></li>
+                    <li><a href="#">Accesorios</a></li>
+                </ul>
+            </li>
+            <li class="roedor"><a href="#"><span>Roedores</span></a>
+                <ul class="submenu">
+                    <li><a href="#">Alimentación</a></li>
+                    <li><a href="#">Refugios</a></li>
+                    <li><a href="#">Salud</a></li>
+                    <li><a href="#">Accesorios</a></li>
+                </ul>
+            </li>
+            <li class="pez"><a href="#"><span>Peces</span></a>
+                <ul class="submenu">
+                    <li><a href="#">Alimentación</a></li>
+                    <li><a href="#">Refugios</a></li>
+                    <li><a href="#">Salud</a></li>
+                    <li><a href="#">Accesorios</a></li>
+                </ul>
+            </li>
+            <li class="reptil"><a href="#"><span>Reptiles</span></a>
+                <ul class="submenu">
+                    <li><a href="#">Alimentación</a></li>
+                    <li><a href="#">Refugios</a></li>
+                    <li><a href="#">Salud</a></li>
+                    <li><a href="#">Accesorios</a></li>
+                </ul>
+            </li>
+            
+        </ul>
+        </nav>
+    <main>
+        <section class="container">
+            <article>
+                <video controls loop>
+                    <source src="videos/cuidados_cachorro.mp4" type="video/mp4">
+                    <source src="videos/cuidados_cachorro.ogv" type="video/ogv">
+                    Tu navegador no soporta este formato de video
+                </video>
+            </article>
+            <article>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/xKwGrWMFito?playlist=xKwGrWMFito&autoplay=1&mute=1&loop=1&controls=2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </article>
+            
+            <article>
+                <a href="#">Producto</a>
+                <div class="imagen"></div>
+                <div class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dignissimos autem
+                    sunt consequuntur.</div>
+                <p>Precio€</p>
+                <a href="">Comprar</a>
+            </article>
+            <article>
+                <a href="#">Producto</a>
+                <div class="imagen"></div>
+                <div class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dignissimos autem
+                    sunt consequuntur.</div>
+                <p>Precio€</p>
+                <a href="">Comprar</a>
+            </article>
+            <article id="agotado">
+                <a href="#">Producto</a>
+                <div class="imagen"></div>
+                <div class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dignissimos autem
+                    sunt consequuntur.</div>
+                <p>Precio€</p>
+                <a href="">Agotado</a>
+            </article>
+            <article>
+                <a href="#">Producto</a>
+                <div class="imagen"></div>
+                <div class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dignissimos autem
+                    sunt consequuntur.</div>
+                <p>Precio€</p>
+                <a href="">Comprar</a>
+            </article>
+
+
+        </section>
+        <aside>
+            <section class="oferta">
+                <h3>OFERTA DEL DIA</h3>
+                <h4>Quedan:<span>12h 23min 21s</span></h4>
+                <img src="img/gato.jpg" alt="">
+                <img src="img/precio.png" alt="">
+            </section>
+            <section class="comentarios">
+                <div class="entrada">
+                    <div class="icono">
+                        <p>User1</p>
+                        <p>Hace 3min</p>
+                    </div>
+                    <div class="textocomentario">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid
+                        soluta accusamus amet modi maxime nam nisi exercitationem?</div>
+                    <div class="nota">9/10</div>
+                </div>
+                <div class="entrada">
+                    <div class="icono">
+                        <p>User2</p>
+                        <p>Hace 20 min</p>
+                    </div>
+                    <div class="textocomentario">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid
+                        soluta accusamus amet modi maxime nam nisi exercitationem?</div>
+                    <div class="nota">9.5/10</div>
+                </div>
+            </section>
+        </aside>
+    </main>
+    <footer>
+
+        <ul class="enlaces-footer">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Pago seguro</a></li>
+            <li><a href="#">Politica de privacidad</a></li>
+            <li><a href="#">Terminos y condiciones</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+
+
+        <ul class="iconos-footer">
+            <li><a href="#"><img src="img/008-twitter.png" alt=""></a></li>
+            <li><a href="#"><img src="img/036-facebook.png" alt=""></a></li>
+            <li><a href="#"><img src="img/001-youtube.png" alt=""></a></li>
+            <li><a href="#"><img src="img/005-whatsapp.png" alt=""></a></li>
+            <li><a href="#"><img src="img/033-google-plus.png" alt=""></a></li>
+            <li><a href="3"><img src="img/029-instagram.png" alt=""></a></li>
+        </ul>
+
+    </footer>
+
+</body>
+
+</html>
