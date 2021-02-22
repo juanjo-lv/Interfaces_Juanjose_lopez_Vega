@@ -229,6 +229,15 @@ article .imagen {
   height: 220px;
   background-size: cover;
   border-radius: 4px;
+  z-index: 99;
+  transition: all 2s ease-out 0.2s;
+}
+article .imagen:hover{
+  width: 500px;
+  height: 500px;
+  transform: rotate(360deg);
+  border-radius: 50%;
+  border: 4px solid gold;
 }
 article:nth-child(even) .imagen {
   background-image: url(../img/garen.jpeg);
