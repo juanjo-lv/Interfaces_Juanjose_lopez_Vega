@@ -1,0 +1,46 @@
+.perrito{
+    background-image: url(sinborde4.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 10rem;
+    height: 10rem;
+
+    position: absolute;
+    top: 30%;
+    right: 0%;
+    
+    animation-name: caminando;
+    animation-duration:3s;
+    animation-iteration-count: infinite;
+    animation-timing-function:linear;	
+    animation-delay: 1s;
+} 
+.perrito:hover{
+    animation-play-state: paused;
+}
+@keyframes caminando {
+    from{ background-image: url(../img/perrito/sinborde4.png); right: 0%;transform: rotate(10deg); }
+    5%{ background-image: url(../img/perrito/sinborde3.png); right: 5%;}
+    10%{ background-image: url(../img/perrito/sinborde2.png); right: 10%;transform: rotate(-10deg);}
+    15%{ background-image: url(../img/perrito/sinborde1.png); right: 15%;}
+    20%{ background-image: url(../img/perrito/sinborde4.png); right: 20%;transform: rotate(10deg);}
+    25%{ background-image: url(../img/perrito/sinborde3.png); right: 25%;}
+    30%{ background-image: url(../img/perrito/sinborde2.png); right: 30%;transform: rotate(-10deg);}
+    35%{ background-image: url(../img/perrito/sinborde1.png); right: 35%;}
+    40%{ background-image: url(../img/perrito/sinborde4.png); right: 40%;transform: rotate(10deg);}
+    45%{ background-image: url(../img/perrito/sinborde3.png); right: 45%;}
+    50%{ background-image: url(../img/perrito/sinborde2.png); right: 50%;transform: rotate(-10deg);}
+    55%{ background-image: url(../img/perrito/sinborde3.png); right: 55%;}
+    60%{ background-image: url(../img/perrito/sinborde2.png); right: 60%;transform: rotate(10deg);}
+    60%{ background-image: url(../img/perrito/sinborde2.png); right: 60%;}
+    65%{ background-image: url(../img/perrito/sinborde1.png); right: 65%;transform: rotate(-10deg);}
+    70%{ background-image: url(../img/perrito/sinborde4.png); right: 70%;}
+    75%{ background-image: url(../img/perrito/sinborde3.png); right: 75%;transform: rotate(10deg);}
+    80%{ background-image: url(../img/perrito/sinborde2.png); right: 80%;}
+    85%{ background-image: url(../img/perrito/sinborde1.png); right: 85%;transform: rotate(-10deg);}
+    90%{ background-image: url(../img/perrito/sinborde4.png); right: 90%;}
+    95%{ background-image: url(../img/perrito/sinborde3.png); right: 95%;transform: rotate(10deg);}
+    100%{ background-image: url(../img/perrito/sinborde2.png); right: 100%;}
+}

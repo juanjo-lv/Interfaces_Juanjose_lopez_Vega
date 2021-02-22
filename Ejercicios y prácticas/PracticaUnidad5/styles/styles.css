@@ -48,7 +48,7 @@ audio{
 .logo-grande {
   width: 250px;
   height: 80px;
-  background-image: url(img/logo-grande.png);
+  background-image: url(../img/logo-grande.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -69,7 +69,7 @@ audio{
   border-radius: 1.5rem;
   text-align: center;
   align-self: center;
-  background-image: url(img/loupe.png);
+  background-image: url(../img/loupe.png);
   background-repeat: no-repeat;
   background-size: 35px;
   background-position: left;
@@ -222,7 +222,7 @@ iframe{
 }
 
 article:nth-child(odd) .imagen {
-  background-image: url(img/perrete220.jpg);
+  background-image: url(../img/perrete220.jpg);
 }
 article .imagen {
   width: 220px;
@@ -231,7 +231,7 @@ article .imagen {
   border-radius: 4px;
 }
 article:nth-child(even) .imagen {
-  background-image: url(img/garen.jpeg);
+  background-image: url(../img/garen.jpeg);
   background-position: center;
 }
 
@@ -338,7 +338,7 @@ section .icono {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-image: url(img/user.png);
+  background-image: url(../img/user.png);
   background-repeat: no-repeat;
   background-size: 40%;
   background-position: center;
@@ -449,7 +449,7 @@ footer {
   .logo-grande {
     width: 80px;
     height: 8vh;
-    background-image: url(img/logo-peq.png);
+    background-image: url(../img/logo-peq.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -512,22 +512,22 @@ footer {
   }
 
   .perro {
-    background-image: url(img/perro.png);
+    background-image: url(../img/perro.png);
   }
   .gato{
-    background-image: url(img/gato.png);
+    background-image: url(../img/gato.png);
   }
   .ave{
-    background-image: url(img/loro.png);
+    background-image: url(../img/loro.png);
   }
   .roedor{
-    background-image: url(img/hamster.png);
+    background-image: url(../img/hamster.png);
   }
   .pez{
-    background-image: url(img/pez.png);
+    background-image: url(../img/pez.png);
   }
   .reptil{
-    background-image: url(img/serpiente.png);
+    background-image: url(../img/serpiente.png);
   }
   .submenu {
     width: 20vh;
