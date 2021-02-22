@@ -49,17 +49,17 @@
             console.log(elementos)
             elementos.forEach(element => {
                 element.style.setProperty("margin-left","90vw");
-                document.querySelectorAll(".item")[0].innerHTML="Caja2";
-                document.querySelectorAll(".item")[1].innerHTML="Caja1";
             });
+            document.querySelectorAll(".item")[0].innerHTML="Caja2";
+            document.querySelectorAll(".item")[1].innerHTML="Caja1";
         })
         botVuelta.addEventListener("click",()=>{
             console.log(elementos)
             elementos.forEach(element => {
                 element.style.setProperty("margin-left","0px");
-                document.querySelectorAll(".item")[0].innerHTML="Caja1";
-                document.querySelectorAll(".item")[1].innerHTML="Caja2";
             });
+            document.querySelectorAll(".item")[0].innerHTML="Caja1";
+            document.querySelectorAll(".item")[1].innerHTML="Caja2";
         })
     </script>
 </body>
