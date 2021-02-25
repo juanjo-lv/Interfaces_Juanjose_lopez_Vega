@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+    
         .item{
-            width: 200px;
-            height: 180px;
+            width: 150px;
+            height: 150px;
             font-size: 1.5rem;
             background-color: red;
             margin: 2rem;
-           
+            
+            position: relative;
 
             display: flex;
             justify-content: center;
@@ -34,10 +36,10 @@
 </head>
 <body>
     <div class="container">
-        <div class="item">Caja1</div>
-        <div class="item">Caja2</div>
-        <div class="item">Caja3</div>
-        <div class="item">Caja4</div>
+        <div class="item uno">Caja1</div>
+        <div class="item dos">Caja2</div>
+        <div class="item tres">Caja3</div>
+        <div class="item cuatro">Caja4</div>
     </div>
     <button id="ida">Desplaza a la derecha e intercalar</button>
     <button id="vuelta">Volver a la posicion inicial</button>
@@ -50,16 +52,20 @@
             elementos.forEach(element => {
                 element.style.setProperty("margin-left","90vw");
             });
-            document.querySelectorAll(".item")[0].innerHTML="Caja2";
-            document.querySelectorAll(".item")[1].innerHTML="Caja1";
+            document.querySelector(".uno").style.setProperty("transform","translate(0%,120%)");
+            document.querySelector(".dos").style.setProperty("transform","translate(0%,-120%)");
+            document.querySelector(".tres").style.setProperty("transform","translate(0%,120%)");
+            document.querySelector(".cuatro").style.setProperty("transform","translate(0%,-120%)");
         })
         botVuelta.addEventListener("click",()=>{
             console.log(elementos)
             elementos.forEach(element => {
                 element.style.setProperty("margin-left","0px");
             });
-            document.querySelectorAll(".item")[0].innerHTML="Caja1";
-            document.querySelectorAll(".item")[1].innerHTML="Caja2";
+            document.querySelector(".uno").style.setProperty("transform","translate(0%,0%)");
+            document.querySelector(".dos").style.setProperty("transform","translate(0%,0%)");
+            document.querySelector(".tres").style.setProperty("transform","translate(0%,0%)");
+            document.querySelector(".cuatro").style.setProperty("transform","translate(0%,0%)");
         })
     </script>
 </body>
