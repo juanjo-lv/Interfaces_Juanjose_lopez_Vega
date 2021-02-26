@@ -13,8 +13,10 @@
 <body>
     <!--
         ACCESIBILIDAD 
-        He tenido 2 tipos de errores : enlaces sin alt y label sin from 
-        
+        He tenido 2 tipos de errores : enlaces sin alt y un form sin label 
+        cambios: 
+        he añadido un label al formulario l.47
+        alt en imagenes añadidos : l 61,62,65,180,181,218,219,220,221,222,223
     -->
     <header>
         <div class="perrito"></div>
@@ -43,7 +45,8 @@
             <img src="img/logo/logo-peq.png" alt="">      
         </picture>
         <form action="#">
-            <input type="text" placeholder="search" class="barra">
+            <label for="barra"></label>
+            <input type="text" name="barra" placeholder="search" class="barra">
         </form>
 
         <!-- EL autoplay en firefox funciona perfectamente, en chrome si refrescas en visualstudio con el liveserver también pero si en cambio 
@@ -55,11 +58,11 @@
         </audio>
 
         <div class="usuario">
-            <a href="#"><img class="icono fav" src="img/corazon.png" alt=""></a>
-            <a href="#"><img class="icono carrito" src="img/carrito.png" alt=""></a>
+            <a href="#"><img class="icono fav" src="img/corazon.png" alt="corazon"></a>
+            <a href="#"><img class="icono carrito" src="img/carrito.png" alt="carrito"></a>
             <a href="#" class="log">Registrarse</a>
             <a href="#" class="log">Iniciar sesión</a>
-            <img src="img/conf.png" alt="" class="opciones">
+            <img src="img/conf.png" alt="opciones" class="opciones">
         </div>
     </header>
     <nav>
@@ -174,8 +177,8 @@
             <section class="oferta">
                 <h3>OFERTA DEL DIA</h3>
                 <h4>Quedan:<span>12h 23min 21s</span></h4>
-                <img src="img/gato.jpg" alt="">
-                <img src="img/precio.png" alt="">
+                <img src="img/gato.jpg" alt="gato">
+                <img src="img/precio.png" alt="precio">
             </section>
             <section class="comentarios">
                 <div class="entrada">
@@ -212,12 +215,12 @@
 
 
         <ul class="iconos-footer">
-            <li><a href="#"><img src="img/008-twitter.png" alt=""></a></li>
-            <li><a href="#"><img src="img/036-facebook.png" alt=""></a></li>
-            <li><a href="#"><img src="img/001-youtube.png" alt=""></a></li>
-            <li><a href="#"><img src="img/005-whatsapp.png" alt=""></a></li>
-            <li><a href="#"><img src="img/033-google-plus.png" alt=""></a></li>
-            <li><a href="3"><img src="img/029-instagram.png" alt=""></a></li>
+            <li><a href="#"><img src="img/008-twitter.png" alt="twitter"></a></li>
+            <li><a href="#"><img src="img/036-facebook.png" alt="facebook"></a></li>
+            <li><a href="#"><img src="img/001-youtube.png" alt="youtube"></a></li>
+            <li><a href="#"><img src="img/005-whatsapp.png" alt="whatsapp"></a></li>
+            <li><a href="#"><img src="img/033-google-plus.png" alt="google+"></a></li>
+            <li><a href="3"><img src="img/029-instagram.png" alt="Instagram"></a></li>
         </ul>
 
     </footer>
