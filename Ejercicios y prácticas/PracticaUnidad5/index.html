@@ -14,18 +14,42 @@
     <header>
         <div class="perrito"></div>
         <div class="valla"></div>
-        <a href="#" class="logo-grande"></a>
+        <!-- <a href="#" class="logo-grande"></a> -->
+        <picture>
+            <source
+             media="(min-width:1200px)"
+             sizes="(min-width:1600px)10vw, 8vw"
+             srcset=" img/logo/logo-grande-500.png 600w,
+                      img/logo/logo-grande-400.png 300w"
+            >
+            <!--Si hay el doble de densidad de pixeles la imagen se convierte en blanco y negro-->
+            <source
+            media="(min-width:768px)"
+            sizes="20vw"
+            srcset="img/logo/logo-grande-500.png 400w,
+                    img/logo/logo-grande-300.png 300w">
+             <!--Por defecto rosa , doble dpi blanco y negro-->
+             <source
+             media="(min-width:300px)"
+             sizes="20vw"
+             srcset="img/logo/logo-peq2.png 250w,
+                     img/logo/logo-peq.png 500w"
+             >
+            
+            <img src="img/logo/logo-peq.png" alt="">      
+        </picture>
         <form action="#">
             <input type="text" placeholder="search" class="barra">
         </form>
+
         <!-- EL autoplay en firefox funciona perfectamente, en chrome si refrescas en visualstudio con el liveserver también pero si en cambio 
-        refrescas con F5 no se reproduce automaticamente -->
-        <audio autoplay loop controls muted>
+        refrescas con F5 no se reproduce automaticamente --> 
+        <audio controls autoplay muted loop>
             <source src="sounds/pajaritos.ogg" type="">
             <source src="sounds/pajaritos.mp3" type="">
             Tu navegador no soporta este formato de audio    
         </audio>
-  
+
         <div class="usuario">
             <a href="#"><img class="icono fav" src="img/corazon.png" alt=""></a>
             <a href="#"><img class="icono carrito" src="img/carrito.png" alt=""></a>
