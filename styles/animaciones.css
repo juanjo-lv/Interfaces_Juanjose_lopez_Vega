@@ -1,0 +1,94 @@
+.perrito{
+    background-image: url(sinborde4.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 10rem;
+    height: 10rem;
+
+    position: absolute;
+    top: 70%;
+    right: 0%;
+    
+    animation-name: caminando;
+    animation-duration:3s;
+    animation-iteration-count: infinite;
+    animation-timing-function:linear;	
+    animation-delay: 1s;
+    z-index: 999;
+} 
+.valla{
+    z-index: 999;
+    position: absolute;
+    top: 70%;
+    right: 55%;
+    background-image: url(../img/perrito/valla.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 10rem;
+    height: 10rem;
+    visibility: hidden;
+
+    animation-name: valla;
+    animation-duration:3s;
+    animation-iteration-count: infinite;
+    animation-timing-function:linear;	
+    animation-delay: 1s;
+
+}
+.perrito:hover{
+    animation-play-state: paused;
+}
+.perrito:hover ~ .valla{
+    animation-play-state: paused;
+}
+/*El perro y la valla están sincronizados para que la valla aparezca unos instantes antes de que el perro salte y cuando termine desaparezca*/
+@keyframes caminando {
+    from{ background-image: url(../img/perrito/sinborde4.png); right: 0%; transform: rotate(-10deg);}
+    5%{ background-image: url(../img/perrito/sinborde3.png); right: 5%;}
+    10%{ background-image: url(../img/perrito/sinborde2.png); right: 10%; transform: rotate(10deg);}
+    15%{ background-image: url(../img/perrito/sinborde1.png); right: 15%;top: 70%;}
+    20%{ background-image: url(../img/perrito/sinborde4.png); right: 20%;transform: rotate(-10deg);top: 70%;}
+    25%{ background-image: url(../img/perrito/sinborde3.png); right: 25%;top: 70%;}
+    30%{ background-image: url(../img/perrito/sinborde2.png); right: 30%;transform: rotate(10deg);top: 70%;}
+    35%{ background-image: url(../img/perrito/sinborde1.png); right: 35%;top: 70%;}
+    40%{ background-image: url(../img/perrito/sinborde4.png); right: 40%;transform: rotate(-10deg);top: 70%;}
+    45%{ background-image: url(../img/perrito/sinborde3.png); right: 45%;  top: 55%;}
+    50%{ background-image: url(../img/perrito/sinborde2.png); right: 50%;transform: rotate(10deg); top: 55%;}
+    55%{ background-image: url(../img/perrito/sinborde3.png); right: 55%; top: 55%;}
+    60%{ background-image: url(../img/perrito/sinborde2.png); right: 60%;transform: rotate(-10deg); top: 65%;}
+    65%{ background-image: url(../img/perrito/sinborde1.png); right: 65%;top: 70%;}
+    70%{ background-image: url(../img/perrito/sinborde4.png); right: 70%;transform: rotate(10deg);top: 70%;}
+    75%{ background-image: url(../img/perrito/sinborde3.png); right: 75%;top: 70%;}
+    80%{ background-image: url(../img/perrito/sinborde2.png); right: 80%;transform: rotate(-10deg);top: 70%;}
+    85%{ background-image: url(../img/perrito/sinborde1.png); right: 85%;top: 70%;}
+    90%{ background-image: url(../img/perrito/sinborde4.png); right: 90%;transform: rotate(10deg);top: 70%;}
+    95%{ background-image: url(../img/perrito/sinborde3.png); right: 95%;top: 70%;}
+    100%{ background-image: url(../img/perrito/sinborde2.png); right: 100%;transform: rotate(-10deg);top: 70%;}
+}
+@keyframes valla {
+    from{visibility: hidden;}
+    5%{visibility: hidden;}
+    10%{visibility: hidden;}
+    15%{visibility: hidden;}
+    20%{visibility: hidden;}
+    25%{visibility: hidden;}
+    30%{visibility: hidden;}
+    35%{visibility: hidden;}
+    40%{visibility: hidden;}
+    45%{visibility: visible;}
+    50%{visibility: visible;}
+    55%{visibility: visible;}
+    60%{visibility: visible;}
+    65%{visibility: visible;}
+    70%{visibility: hidden;}
+    75%{visibility: hidden;}
+    80%{visibility: hidden;}
+    85%{visibility: hidden;}
+    90%{visibility: hidden;}
+    95%{visibility: hidden;}
+    100%{visibility: hidden;}
+
+}

@@ -4,24 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/animaciones.css">
     <title>Practica 3</title>
 </head>
 
 <body>
+    <!--
+        ACCESIBILIDAD 
+        He tenido 2 tipos de errores : enlaces sin alt , un form sin label, falta h1 (Imagen adjunta con el proyecto)
+        he añadido un h1 al proyecto (cod 2.4.6)
+        he añadido un label al formulario l.47 (cod 2.4.6 y 3.3.2)
+        alt en imagenes añadidos : l 61,62,65,180,181,218,219,220,221,222,223 (cod 1.1.1 y 2.4.4)
+    -->
     <header>
-        <a href="#" class="logo-grande"></a>
+        <div class="perrito"></div>
+        <div class="valla"></div>
+        <picture>
+            <source
+             media="(min-width:1200px)"
+             sizes="(min-width:1600px)10vw, 8vw"
+             srcset=" img/logo/logo-grande-500.png 600w,
+                      img/logo/logo-grande-400.png 300w"
+            >
+            <!--Si hay el doble de densidad de pixeles la imagen se convierte en blanco y negro-->
+            <source
+            media="(min-width:768px)"
+            sizes="20vw"
+            srcset="img/logo/logo-grande-500.png 400w,
+                    img/logo/logo-grande-300.png 300w">
+             <!--Por defecto rosa , doble dpi blanco y negro-->
+             <source
+             media="(min-width:300px)"
+             sizes="20vw"
+             srcset="img/logo/logo-peq2.png 250w,
+                     img/logo/logo-peq.png 500w"
+             >
+            
+            <img src="img/logo/logo-peq.png" alt="">      
+        </picture>
         <form action="#">
-            <input type="text" placeholder="search" class="barra">
+            <label for="barra"></label>
+            <input type="text" name="barra" placeholder="search" class="barra">
         </form>
+        <h1>Tienda de animales online</h1>
+        <!-- EL autoplay en firefox funciona perfectamente, en chrome si refrescas en visualstudio con el liveserver también pero si en cambio 
+        refrescas con F5 no se reproduce automaticamente --> 
+        <audio controls autoplay muted loop>
+            <source src="sounds/pajaritos.ogg" type="">
+            <source src="sounds/pajaritos.mp3" type="">
+            Tu navegador no soporta este formato de audio    
+        </audio>
 
         <div class="usuario">
-            <a href="#"><img class="icono fav" src="img/corazon.png" alt=""></a>
-            <a href="#"><img class="icono carrito" src="img/carrito.png" alt=""></a>
+            <a href="#"><img class="icono fav" src="img/corazon.png" alt="corazon"></a>
+            <a href="#"><img class="icono carrito" src="img/carrito.png" alt="carrito"></a>
             <a href="#" class="log">Registrarse</a>
             <a href="#" class="log">Iniciar sesión</a>
-            <img src="img/conf.png" alt="" class="opciones">
+            <img src="img/conf.png" alt="opciones" class="opciones">
         </div>
     </header>
     <nav>
@@ -86,31 +127,17 @@
         </nav>
     <main>
         <section class="container">
-
             <article>
-                <a href="#">Producto</a>
-                <div class="imagen"></div>
-                <div class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dignissimos autem
-                    sunt consequuntur.</div>
-                <p>Precio€</p>
-                <a href="">Comprar</a>
+                <video controls loop>
+                    <source src="videos/cuidados_cachorro.ogv" type="video/ogv">
+                    <source src="videos/cuidados_cachorro.mp4" type="video/mp4">
+                    Tu navegador no soporta este formato de video
+                </video>
             </article>
             <article>
-                <a href="#">Producto</a>
-                <div class="imagen"></div>
-                <div class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dignissimos autem
-                    sunt consequuntur.</div>
-                <p>Precio€</p>
-                <a href="">Comprar</a>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/xKwGrWMFito?playlist=xKwGrWMFito&autoplay=1&mute=1&loop=1&controls=2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </article>
-            <article>
-                <a href="#">Producto</a>
-                <div class="imagen"></div>
-                <div class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dignissimos autem
-                    sunt consequuntur.</div>
-                <p>Precio€</p>
-                <a href="">Comprar</a>
-            </article>
+            
             <article>
                 <a href="#">Producto</a>
                 <div class="imagen"></div>
@@ -135,6 +162,14 @@
                 <p>Precio€</p>
                 <a href="">Agotado</a>
             </article>
+            <article>
+                <a href="#">Producto</a>
+                <div class="imagen"></div>
+                <div class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dignissimos autem
+                    sunt consequuntur.</div>
+                <p>Precio€</p>
+                <a href="">Comprar</a>
+            </article>
 
 
         </section>
@@ -142,8 +177,8 @@
             <section class="oferta">
                 <h3>OFERTA DEL DIA</h3>
                 <h4>Quedan:<span>12h 23min 21s</span></h4>
-                <img src="img/gato.jpg" alt="">
-                <img src="img/precio.png" alt="">
+                <img src="img/gato.jpg" alt="gato">
+                <img src="img/precio.png" alt="precio">
             </section>
             <section class="comentarios">
                 <div class="entrada">
@@ -180,26 +215,16 @@
 
 
         <ul class="iconos-footer">
-            <li><a href="#"><img src="img/008-twitter.png" alt=""></a></li>
-            <li><a href="#"><img src="img/036-facebook.png" alt=""></a></li>
-            <li><a href="#"><img src="img/001-youtube.png" alt=""></a></li>
-            <li><a href="#"><img src="img/005-whatsapp.png" alt=""></a></li>
-            <li><a href="#"><img src="img/033-google-plus.png" alt=""></a></li>
-            <li><a href="3"><img src="img/029-instagram.png" alt=""></a></li>
+            <li><a href="#"><img src="img/008-twitter.png" alt="twitter"></a></li>
+            <li><a href="#"><img src="img/036-facebook.png" alt="facebook"></a></li>
+            <li><a href="#"><img src="img/001-youtube.png" alt="youtube"></a></li>
+            <li><a href="#"><img src="img/005-whatsapp.png" alt="whatsapp"></a></li>
+            <li><a href="#"><img src="img/033-google-plus.png" alt="google+"></a></li>
+            <li><a href="3"><img src="img/029-instagram.png" alt="Instagram"></a></li>
         </ul>
 
     </footer>
-    <!-- Hotjar Tracking Code for https://juanjo-lv.github.io/Interfaces_Juanjose_lo -->
-<script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:2156687,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
+
 </body>
 
 </html>
