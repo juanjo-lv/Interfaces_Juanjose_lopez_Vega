@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-    
+        body{
+         margin: 0;
+         padding: 0;
+        }
         .item{
             width: 150px;
             height: 150px;
@@ -15,7 +18,8 @@
             margin: 2rem;
             
             position: relative;
-
+            top: 0px;
+            left: 0px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -57,17 +61,17 @@
             document.querySelector(".tres").style.setProperty("transform","translate(0%,120%)");
             document.querySelector(".cuatro").style.setProperty("transform","translate(0%,-120%)");
             
-        })
+        });
         botVuelta.addEventListener("click",()=>{
             console.log(elementos)
             elementos.forEach(element => {
-                element.style.setProperty("margin-left","0px");
+                element.style.setProperty("left","calc(100vw - 100%)");
             });
             document.querySelector(".uno").style.setProperty("transform","translate(0%,0%)");
             document.querySelector(".dos").style.setProperty("transform","translate(0%,0%)");
             document.querySelector(".tres").style.setProperty("transform","translate(0%,0%)");
             document.querySelector(".cuatro").style.setProperty("transform","translate(0%,0%)");
-        })
+        });
     </script>
 </body>
 </html>
