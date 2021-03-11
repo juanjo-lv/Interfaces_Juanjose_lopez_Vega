@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.sun.javafx.fxml.FXMLLoaderHelper.FXMLLoaderAccessor"/>
-    <fullyQualifiedTypeName name="javafx.fxml.FXMLLoader"/>
-    <fullyQualifiedTypeName name="jdk.tools.jaotc.Main"/>
-    <fullyQualifiedTypeName name="javafx.scene.layout.AnchorPane"/>
-    <fullyQualifiedTypeName name="javafx.scene.Scene"/>
-</qualifiedTypeNameHistroy>
